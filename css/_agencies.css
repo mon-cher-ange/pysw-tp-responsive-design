@@ -1,0 +1,212 @@
+/* Agencias */
+.main__title {
+    position: relative;
+    padding: 3rem 0;
+    font-style: italic;
+    font-size: 3.2rem;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25)  ;
+}
+
+.agencies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+
+.agency-card {
+    width: 100%;
+    height: 420px;
+    background: linear-gradient(180deg, var(--card-bg), var(--bg-soft-color));
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agency-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.agency-card__header {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+
+.agency-card__header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) saturate(1.15);
+    transition: transform 0.4s ease;
+}
+
+.agency-card:hover .agency-card__header-image {
+    transform: scale(1.05);
+}
+
+.agency-card__header-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.15));
+    color: white;
+}
+
+.agency-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    direction: rtl;
+}
+
+.rating__input {
+    display: none;
+}
+
+.rating__star {
+    font-size: 1.3rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rating__star:hover,
+.rating__star:hover ~ .rating__star {
+    color: var(--accent-color);
+}
+
+.rating__input:checked ~ .rating__star {
+    color: var(--accent-color);
+}
+
+.agency-card__flip-container {
+    flex: 1;
+    position: relative;
+    perspective: 1000px;
+}
+
+.agency-card__inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+}
+
+.agency-card__flip-container:hover .agency-card__inner {
+    transform: rotateY(180deg);
+}
+
+.agency-card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.agency-card__face--front {
+    background-color: var(--card-bg);
+}
+
+.agency-card__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.agency-card__feature {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: var(--text-color);
+    opacity: 0.85;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.agency-card__feature::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.agency-card__face--back {
+    background-color: var(--card-bg);
+    transform: rotateY(180deg);
+}
+
+.agency-card__image-container {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.agency-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.agency-card__summary {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.agency-card__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.agency-card__detail {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+}
+
+.agency-card__detail strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.agency-card__link {
+    color: var(--accent-dark-color);
+    text-decoration: none;
+}
+
+.agency-card__link:hover {
+    text-decoration: underline;
+}
+
+

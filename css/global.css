@@ -1,33 +1,7 @@
-:root {
-    --primary-color: #C9CCD1;
-    --accent-color: #D4AF37;
-    --accent-dark-color: #B8962F;
-
-    --text-color: #1A1A1A;
-    --text-muted: #6F6F6F;
-
-    --bg-color: #F8F8F8;
-    --bg-soft-color: #EFEFEF;
-    --card-bg: #FFFFFF;
-
-    --border-color: #DADADA;
-    --transition-smooth: all 0.3s ease;
-    --header-height: 70px;
-}
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-}
+@import url("_variables.css");
+@import url("_reset.css");
+@import url("_base.css");
+@import url("_agencies.css");
 
 /* Header */
 .header {

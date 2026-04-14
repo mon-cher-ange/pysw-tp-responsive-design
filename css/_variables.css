@@ -1,0 +1,21 @@
+:root {
+    /* Colors */
+    --primary-color: #C9CCD1;
+    --accent-color: #D6B25C;
+    --accent-dark-color: #A8893A;
+
+    --text-color: #121212;
+    --text-muted: #5A5A5A;
+
+    --bg-color: #F3EFE7;
+    --bg-soft-color: #E9E3D9;
+    --card-bg: #F8F4EC;
+
+    --border-color: rgba(0,0,0,0.12);
+    --transition-smooth: all 0.3s ease;
+    --header-height: 70px;
+
+    /* Spacing & Typography */
+    --base-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --line-height: 1.6;
+}
