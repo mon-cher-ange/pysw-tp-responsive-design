@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Spectral:wght@400;500;600&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Spectral:wght@400;500;600&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
 </head>
+
 <body>
     <header class="header">
         <div class="header__container">
@@ -17,12 +21,13 @@
                         d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063q.068.062.132.129.065-.067.132-.129c3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398" />
                 </svg>
             </a>
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegación principal">
                 <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Inicio</a></li>
+                    <li class="nav__item"><a class="nav__link nav__link--active" href="index.html"
+                            aria-current="page">Inicio</a></li>
                     <li class="nav__item nav__item--dropdown">
-                        <a class="nav__link" href="#">Explorar</a>
-                        <div class="nav__menu">
+                        <a class="nav__link" href="#" aria-haspopup="true" aria-expanded="false">Explorar</a>
+                        <div class="nav__menu" role="menu">
                             <ul class="nav__sublist">
                                 <li class="nav__sublist__item"><a class="nav__sublist__link"
                                         href="destinations.html">Destinos</a></li>
@@ -41,11 +46,11 @@
         </div>
     </header>
     <main>
-        <section class="pricing">
+        <section class="pricing" aria-labelledby="titulo-precios">
             <h2 class="pricing__title">Comparador de Destinos</h2>
 
-            <div class="pricing__table-container">
-                <table class="pricing__table">
+            <div class="pricing__table-container" role="region" aria-label="Tabla comparativa de destinos">
+                <table class="pricing__table" aria-describedby="descripcion-tabla">
                     <thead>
                         <tr>
                             <th>Destino</th>
@@ -62,8 +67,9 @@
                             <td data-label="Precio">$185.000</td>
                             <td data-label="Incluye">
                                 Paseo
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Incluye visita al Cerro de Siete Colores y guía
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-purmamarca">ℹ
+                                    <span class="tooltip__text" id="tip-purmamarca" role="tooltip">Incluye visita al
+                                        Cerro de Siete Colores y guía
                                         local.</span>
                                 </span>
                             </td>
@@ -75,8 +81,9 @@
                             <td data-label="Precio">$160.000</td>
                             <td data-label="Incluye">
                                 Arqueología
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Acceso al Pucará y recorrido por el pueblo
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-tilcara">ℹ
+                                    <span class="tooltip__text" id="tip-tilcara" role="tooltip">Acceso al Pucará y
+                                        recorrido por el pueblo
                                         histórico.</span>
                                 </span>
                             </td>
@@ -88,8 +95,9 @@
                             <td data-label="Precio">$120.000</td>
                             <td data-label="Incluye">
                                 Excursión
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Visita al Monumento a la Independencia y centro
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-humahuaca">ℹ
+                                    <span class="tooltip__text" id="tip-humahuaca" role="tooltip">Visita al Monumento a
+                                        la Independencia y centro
                                         histórico.</span>
                                 </span>
                             </td>
@@ -101,8 +109,9 @@
                             <td data-label="Precio">$1.950.000</td>
                             <td data-label="Incluye">
                                 Acceso
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Incluye acceso ilimitado a ruinas y guía
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-machupicchu">ℹ
+                                    <span class="tooltip__text" id="tip-machupicchu" role="tooltip">Incluye acceso
+                                        ilimitado a ruinas y guía
                                         turístico.</span>
                                 </span>
                             </td>
@@ -114,8 +123,9 @@
                             <td data-label="Precio">$3.800.000</td>
                             <td data-label="Incluye">
                                 Cultura
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Entradas a la Acrópolis y museos arqueológicos.</span>
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-atenas">ℹ
+                                    <span class="tooltip__text" id="tip-atenas" role="tooltip">Entradas a la Acrópolis y
+                                        museos arqueológicos.</span>
                                 </span>
                             </td>
                             <td data-label="Duración">4 días</td>
@@ -126,8 +136,9 @@
                             <td data-label="Precio">$95.000</td>
                             <td data-label="Incluye">
                                 Paisaje
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Traslado y guía para fotos en los piletones de
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-salinas">ℹ
+                                    <span class="tooltip__text" id="tip-salinas" role="tooltip">Traslado y guía para
+                                        fotos en los piletones de
                                         sal.</span>
                                 </span>
                             </td>
@@ -139,8 +150,9 @@
                             <td data-label="Precio">$320.000</td>
                             <td data-label="Incluye">
                                 Naturaleza
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Entradas al parque nacional y paseo en lancha.</span>
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-iguazu">ℹ
+                                    <span class="tooltip__text" id="tip-iguazu" role="tooltip">Entradas al parque
+                                        nacional y paseo en lancha.</span>
                                 </span>
                             </td>
                             <td data-label="Duración">3 días</td>
@@ -151,8 +163,9 @@
                             <td data-label="Precio">$5.200.000</td>
                             <td data-label="Incluye">
                                 Expedición
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Tour de Auroras Boreales y cuevas de hielo.</span>
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-islandia">ℹ
+                                    <span class="tooltip__text" id="tip-islandia" role="tooltip">Tour de Auroras
+                                        Boreales y cuevas de hielo.</span>
                                 </span>
                             </td>
                             <td data-label="Duración">7 días</td>
@@ -163,8 +176,9 @@
                             <td data-label="Precio">$6.500.000</td>
                             <td data-label="Incluye">
                                 Safari
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Safari completo con alojamiento en campamento de
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-serengeti">ℹ
+                                    <span class="tooltip__text" id="tip-serengeti" role="tooltip">Safari completo con
+                                        alojamiento en campamento de
                                         lujo.</span>
                                 </span>
                             </td>
@@ -176,8 +190,9 @@
                             <td data-label="Precio">$6.800.000</td>
                             <td data-label="Incluye">
                                 Relax
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Estadía en bungalow sobre el agua y equipo de
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-maldivas">ℹ
+                                    <span class="tooltip__text" id="tip-maldivas" role="tooltip">Estadía en bungalow
+                                        sobre el agua y equipo de
                                         snorkel.</span>
                                 </span>
                             </td>
@@ -189,8 +204,9 @@
                             <td data-label="Precio">$2.600.000</td>
                             <td data-label="Incluye">
                                 Mixto
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Acceso a ruinas mayas frente al mar y cenotes.</span>
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-tulum">ℹ
+                                    <span class="tooltip__text" id="tip-tulum" role="tooltip">Acceso a ruinas mayas
+                                        frente al mar y cenotes.</span>
                                 </span>
                             </td>
                             <td data-label="Duración">7 días</td>
@@ -201,8 +217,9 @@
                             <td data-label="Precio">$4.500.000</td>
                             <td data-label="Incluye">
                                 Espiritualidad
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Paseo por santuarios toriis y jardines zen.</span>
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-kioto">ℹ
+                                    <span class="tooltip__text" id="tip-kioto" role="tooltip">Paseo por santuarios
+                                        toriis y jardines zen.</span>
                                 </span>
                             </td>
                             <td data-label="Duración">6 días</td>
@@ -213,8 +230,8 @@
                             <td data-label="Precio">$4.200.000</td>
                             <td data-label="Incluye">
                                 Aventura
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-petra">ℹ
+                                    <span class="tooltip__text" id="tip-petra" role="tooltip">
                                         Entrada a la Ciudad Rosa, show nocturno y paseo en camello.
                                     </span>
                                 </span>
@@ -227,8 +244,9 @@
                             <td data-label="Precio">$3.900.000</td>
                             <td data-label="Incluye">
                                 Descubrimiento
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">Recorrido por templos sagrados y clases de surf.</span>
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-bali">ℹ
+                                    <span class="tooltip__text" id="tip-bali" role="tooltip">Recorrido por templos
+                                        sagrados y clases de surf.</span>
                                 </span>
                             </td>
                             <td data-label="Duración">9 días</td>
@@ -238,8 +256,8 @@
                             <td data-label="Precio">$4.800.000</td>
                             <td data-label="Incluye">
                                 Crucero
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-fiordos">ℹ
+                                    <span class="tooltip__text" id="tip-fiordos" role="tooltip">
                                         Navegación por Geirangerfjord y tren panorámico Flåmsbana.
                                     </span>
                                 </span>
@@ -251,8 +269,8 @@
                             <td data-label="Precio">$1.400.000</td>
                             <td data-label="Incluye">
                                 Trekking
-                                <span class="tooltip">ℹ
-                                    <span class="tooltip__text">
+                                <span class="tooltip" tabindex="0" aria-describedby="tip-torres">ℹ
+                                    <span class="tooltip__text" id="tip-torres" role="tooltip">
                                         Guía de montaña, equipo de camping y traslado a glaciares.
                                     </span>
                                 </span>
@@ -269,16 +287,18 @@
             <section class="footer__section footer__section--newsletter">
                 <h4 class="footer__title">Newsletter</h4>
                 <form class="newsletter-form" action="#">
-                    <input class="newsletter-form__input" type="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="newsletter-form__button">Suscribirse</button>
+                    <input class="newsletter-form__input" type="email" placeholder="Tu correo electrónico" required
+                        aria-label="Correo electrónico">
+                    <button type="submit" class="newsletter-form__button"
+                        aria-label="Suscribirse al newsletter">Suscribirse</button>
                 </form>
             </section>
             <section class="footer__section footer__section--social">
                 <h4 class="footer__title">Síguenos</h4>
                 <div class="social-links">
-                    <a class="social-links__link" href="#">Facebook</a>
-                    <a class="social-links__link" href="#">Instagram</a>
-                    <a class="social-links__link" href="#">Twitter</a>
+                    <a class="social-links__link" href="#" aria-label="Ir a Facebook">Facebook</a>
+                    <a class="social-links__link" href="#" aria-label="Ir a Instagram">Instagram</a>
+                    <a class="social-links__link" href="#" aria-label="Ir a Twitter">Twitter</a>
                 </div>
             </section>
             <section class="footer__section footer__section--map">
@@ -296,4 +316,5 @@
         </div>
     </footer>
 </body>
+
 </html>
