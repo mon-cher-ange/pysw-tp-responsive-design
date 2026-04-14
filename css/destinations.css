@@ -116,3 +116,101 @@
 .card:hover .card__info {
     transform: translateY(0);
 }
+
+/* seccion */
+.pricing {
+    padding: 4rem 2rem;
+    background-color: var(--bg-soft-color);
+}
+
+/* titulo */
+.pricing__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+    font-size: 2.5rem;
+}
+
+/* contenedor */
+.pricing__table-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+/* table */
+.pricing__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* head */
+.pricing__table th {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* celdas */
+.pricing__table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* filas */
+.pricing__table tr {
+    transition: var(--transition-smooth);
+}
+
+.pricing__table tr:hover {
+    background-color: var(--bg-soft-color);
+}
+
+/* Ultima fila sin borde*/
+.pricing__table tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+
+    .pricing__table thead {
+        display: none;
+    }
+
+    .pricing__table,
+    .pricing__table tbody,
+    .pricing__table tr,
+    .pricing__table td {
+        display: block;
+        width: 100%;
+    }
+
+    .pricing__table tr {
+        margin-bottom: 1rem;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+    }
+
+    .pricing__table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        border: none;
+    }
+
+    .pricing__table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: var(--accent-color);
+    }
+}

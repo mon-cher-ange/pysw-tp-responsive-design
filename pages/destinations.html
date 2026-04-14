@@ -45,13 +45,13 @@
     <main>
         <section class="filters">
 
-            <!-- INPUTS (ocultos con CSS) -->
+            <!-- inputs -->
             <input type="radio" name="category" id="all" checked>
             <input type="radio" name="category" id="cultural">
             <input type="radio" name="category" id="naturaleza">
             <input type="radio" name="category" id="playa">
 
-            <!-- BOTONES -->
+            <!-- botones -->
             <div class="filters__buttons">
                 <label for="all">Todos</label>
                 <label for="cultural">Cultural</label>
@@ -59,10 +59,11 @@
                 <label for="playa">Playa</label>
             </div>
 
-            <!-- GALERÍA (IMPORTANTE: dentro de filters) -->
+            <!-- galeria -->
             <section class="gallery">
                 <article class="card cultural">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbR4bLhL-DmQvMR1iGEmDx268NBcmk4GDBw&s" alt="Cerro de los Siete Colores en Purmamarca, Jujuy">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbR4bLhL-DmQvMR1iGEmDx268NBcmk4GDBw&s"
+                        alt="Cerro de los Siete Colores en Purmamarca, Jujuy">
                     <div class="card__info">
                         <h3>Purmamarca</h3>
                         <p>Hogar del icónico Cerro de los Siete Colores. Este pintoresco pueblo destaca por su feria
@@ -70,7 +71,8 @@
                     </div>
                 </article>
                 <article class="card cultural">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLiAys0MJB8WlbJWkwC5zlvkrrx1PXY3M7Dg&s" alt="Pucará de Tilcara, sitio arqueológico prehispánico">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLiAys0MJB8WlbJWkwC5zlvkrrx1PXY3M7Dg&s"
+                        alt="Pucará de Tilcara, sitio arqueológico prehispánico">
                     <div class="card__info">
                         <h3>Tilcara</h3>
                         <p>Considerada la capital arqueológica de la región. No puedes perderte el Pucará, una antigua
@@ -79,7 +81,8 @@
                 </article>
 
                 <article class="card cultural">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDUsI3gv_CH6N_IzXfZBAZOMSkg17sGaI8PQ&s" alt="Serranías del Hornocal, el cerro de 14 colores">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDUsI3gv_CH6N_IzXfZBAZOMSkg17sGaI8PQ&s"
+                        alt="Serranías del Hornocal, el cerro de 14 colores">
                     <div class="card__info">
                         <h3>Humahuaca</h3>
                         <p>Ciudad histórica que da nombre a la Quebrada. Desde aquí se accede al Hornocal (el Cerro de
@@ -131,9 +134,10 @@
                             calles blancas del barrio del Albaicín.</p>
                     </div>
                 </article>
-               
+
                 <article class="card naturaleza">
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/40/db/the-great-salinas-grandes.jpg?w=900&h=500&s=1" alt="Inmensidad blanca de las Salinas Grandes en Jujuy">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/40/db/the-great-salinas-grandes.jpg?w=900&h=500&s=1"
+                        alt="Inmensidad blanca de las Salinas Grandes en Jujuy">
                     <div class="card__info">
                         <h3>Salinas Grandes</h3>
                         <p>Un desierto de sal a 3.450 metros de altura. Es uno de los destinos más fotografiados del
@@ -237,6 +241,140 @@
                     </div>
                 </article>
             </section>
+        </section>
+        <section class="pricing">
+            <h2 class="pricing__title">Tabla de Precios</h2>
+
+            <div class="pricing__table-container">
+                <table class="pricing__table">
+                    <thead>
+                        <tr>
+                            <th>Destino</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Destino">Purmamarca, Jujuy</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$185.000</td>
+                            <td data-label="Duración">2 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Tilcara, Jujuy</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$160.000</td>
+                            <td data-label="Duración">2 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Humahuaca, Jujuy</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$120.000</td>
+                            <td data-label="Duración">1 día</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Machu Picchu, Perú</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$1.950.000</td>
+                            <td data-label="Duración">5 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Atenas, Grecia</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$3.800.000</td>
+                            <td data-label="Duración">4 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Kioto, Japón</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$4.500.000</td>
+                            <td data-label="Duración">6 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Petra, Jordania</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$4.200.000</td>
+                            <td data-label="Duración">3 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Granada, España</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Precio">$3.100.000</td>
+                            <td data-label="Duración">3 días</td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Destino">Salinas Grandes, Jujuy</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Precio">$95.000</td>
+                            <td data-label="Duración">1 día</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Cataratas del Iguazú</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Precio">$320.000</td>
+                            <td data-label="Duración">3 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Islandia</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Precio">$5.200.000</td>
+                            <td data-label="Duración">7 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Fiordos Noruegos</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Precio">$4.800.000</td>
+                            <td data-label="Duración">6 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Serengeti, Tanzania</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Precio">$6.500.000</td>
+                            <td data-label="Duración">5 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Torres del Paine, Chile</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Precio">$1.400.000</td>
+                            <td data-label="Duración">5 días</td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Destino">Islas Maldivas</td>
+                            <td data-label="Categoría">Playa</td>
+                            <td data-label="Precio">$6.800.000</td>
+                            <td data-label="Duración">8 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Tulum, México</td>
+                            <td data-label="Categoría">Playa</td>
+                            <td data-label="Precio">$2.600.000</td>
+                            <td data-label="Duración">7 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Bora Bora</td>
+                            <td data-label="Categoría">Playa</td>
+                            <td data-label="Precio">$8.500.000</td>
+                            <td data-label="Duración">10 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Islas Seychelles</td>
+                            <td data-label="Categoría">Playa</td>
+                            <td data-label="Precio">$5.900.000</td>
+                            <td data-label="Duración">7 días</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Bali, Indonesia</td>
+                            <td data-label="Categoría">Playa</td>
+                            <td data-label="Precio">$3.900.000</td>
+                            <td data-label="Duración">9 días</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
     <footer class="footer">
