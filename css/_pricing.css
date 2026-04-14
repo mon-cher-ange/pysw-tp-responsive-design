@@ -6,40 +6,65 @@
 
 /* TÍTULO */
 .pricing__title {
+    position: relative;
+    padding: 5rem 0 3rem;
+    font-size: 3.5rem;
     text-align: center;
-    margin-bottom: 2rem;
-    color: var(--accent-color);
-    font-size: 2.5rem;
+    color: var(--text-color);
+    font-family: var(--font-title), serif;
+}
+
+.pricing__title::after {
+    content: "";
+    width: 100px;
+    height: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* CONTENEDOR */
 .pricing__table-container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     overflow-x: auto;
-    overflow:visible; /**/
+    padding: 1rem;
 }
 
 /* TABLA */
 .pricing__table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     background-color: var(--card-bg);
-    overflow:visible;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    overflow: hidden;
 }
 
 /* HEAD */
 .pricing__table th {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 1rem;
+    background-color: var(--bg-soft-color);
+    color: var(--text-color);
+    font-family: var(--font-price), sans-serif;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 /* CELDAS */
 .pricing__table td {
-    padding: 1rem;
+    font-family: var(--font-body), sans-serif;
+    padding: 1.5em;
     border-bottom: 1px solid var(--border-color);
     text-align: center;
+    color: var(--text-color);
+    transition: var(--transition-smooth);
 }
 
 /* HOVER */
@@ -49,7 +74,12 @@
 
 .pricing__table tr:hover {
     background-color: var(--bg-soft-color);
-    transform: scale(1.01);
+    transition: background 0.3s ease;
+}
+
+/* Ultima fila sin borde */
+.dest-pricing__table tr:last-child td {
+    border-bottom: none;
 }
 
 /* TOOLTIP */
