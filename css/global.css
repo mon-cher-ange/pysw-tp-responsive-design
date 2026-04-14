@@ -2,6 +2,7 @@
 @import url("_reset.css");
 @import url("_base.css");
 @import url("_agencies.css");
+@import url("_contact-form.css");
 
 /* Header */
 .header {
@@ -178,7 +179,7 @@
     text-align: center;
     letter-spacing: 2px;
     color: var(--accent-color);
-    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25)  ;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 }
 
 .destinations__title::after {

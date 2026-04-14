@@ -33,7 +33,46 @@
             </nav>
         </div>
     </header>
-    <main></main>
+    <main>
+        <section class="contact">
+            <h2 class="contact__title">Contacto</h2>
+            <div class="contact-loading" id="contact-loading">
+                <div class="contact-loading__spinner"></div>
+            </div>
+            <div class="contact-modal" id="contact-modal">
+                <div class="contact-modal__content">
+                    <h3 class="contact-modal__title">¡Mensaje enviado!</h3>
+                    <p class="contact-modal__text">Gracias por contactarte con nosotros. Te responderemos pronto.</p>
+                    <a href="#" class="contact-modal__close">Cerrar</a>
+                </div>
+            </div>
+            <form class="contact-form" novalidate>
+                <div class="contact-form__group">
+                    <label class="contact-form__label" for="name">Nombre</label>
+                    <input class="contact-form__input" type="text" id="name" required>
+                    <span class="contact-form__error">Ingresa un nombre válido</span>
+                </div>
+                <div class="contact-form__group">
+                    <label class="contact-form__label" for="email">Email</label>
+                    <input class="contact-form__input" type="email" id="email" required>
+                    <span class="contact-form__error">Ingresa un email válido</span>
+                </div>
+                <div class="contact-form__group">
+                    <label class="contact-form__label" for="phone">Teléfono</label>
+                    <input class="contact-form__input" type="tel" id="phone" pattern="[0-9]{7,15}" required>
+                    <span class="contact-form__error">Ingresa un teléfono válido</span>
+                </div>
+                <div class="contact-form__group contact-form__group--full">
+                    <label class="contact-form__label" for="message">Mensaje</label>
+                    <textarea class="contact-form__input contact-form__textarea" id="message" required></textarea>
+                    <span class="contact-form__error">El mensaje no puede estar vacío</span>
+                </div>
+                <a href="#contact-loading" class="contact-form__button">
+                    <span class="contact-form__button-text">Enviar</span>
+                </a>
+            </form>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer__container">
             <section class="footer__section footer__section--newsletter">
