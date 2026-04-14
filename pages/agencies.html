@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lora:wght@400;500&family=Inter:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a class="header__logo" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-balloon-heart" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063q.068.062.132.129.065-.067.132-.129c3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398"/>
+                </svg>
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link nav__link--active" href="../index.html">Inicio</a></li>
+                    <li class="nav__item nav__item--dropdown">
+                        <a class="nav__link" href="#">Explorar</a>
+                        <div class="nav__menu">
+                            <ul class="nav__sublist">
+                                <li class="nav__sublist__item"><a class="nav__sublist__link" href="destinations.html">Destinos</a></li>
+                                <li class="nav__sublist__item"><a class="nav__sublist__link" href="agencies.html">Agencias</a></li>
+                                <li class="nav__sublist__item"><a class="nav__sublist__link" href="pricing.html">Precios</a></li>
+                                <li class="nav__sublist__item"><a class="nav__sublist__link" href="travel-blog.html">Blog</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav__item"><a class="nav__link" href="contact-form.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <h2 class="main__title">Agencias</h2>
+        <section class="agencies-grid">
+            <article class="agency-card">
+                <div class="agency-card__header">
+                    <img class="agency-card__header-image" src="../assets/img/agency_placeholder.jpg" alt="Agency Image">
+                    <div class="agency-card__header-overlay">
+                        <h3 class="agency-card__title">Agencia Norte Andino</h3>
+                        <div class="rating">
+                            <input class="rating__input" type="radio" id="norte-5" name="rating-norte" value="5"/>
+                            <label class="rating__star" for="norte-5">★</label>
+                            <input class="rating__input" type="radio" id="norte-4" name="rating-norte" value="4"/>
+                            <label class="rating__star" for="norte-4">★</label>
+                            <input class="rating__input" type="radio" id="norte-3" name="rating-norte" value="3"/>
+                            <label class="rating__star" for="norte-3">★</label>
+                            <input class="rating__input" type="radio" id="norte-2" name="rating-norte" value="2"/>
+                            <label class="rating__star" for="norte-2">★</label>
+                            <input class="rating__input" type="radio" id="norte-1" name="rating-norte" value="1"/>
+                            <label class="rating__star" for="norte-1">★</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="agency-card__flip-container">
+                    <div class="agency-card__inner">
+                        <div class="agency-card__face agency-card__face--front">
+                            <p class="agency-card__summary">Especialistas en circuitos por la Quebrada y la Puna.</p>
+                            <ul class="agency-card__features">
+                                <li class="agency-card__feature">Tours guiados</li>
+                                <li class="agency-card__feature">Transporte incluido</li>
+                                <li class="agency-card__feature">Excursiones personalizadas</li>
+                            </ul>
+                        </div>
+                        <div class="agency-card__face agency-card__face--back">
+                            <h3 class="agency-card__subtitle">Detalles</h3>
+                            <div class="agency-card__info">
+                                <p class="agency-card__detail"><strong>Dirección:</strong> Av. Principal 123, San Salvador de Jujuy</p>
+                                <p class="agency-card__detail"><strong>Teléfono:</strong> (0388) 123-4567</p>
+                                <p class="agency-card__detail"><strong>Email:</strong> contacto@norteandino.com</p>
+                                <p class="agency-card__detail"><strong>Sitio web:</strong>
+                                    <a class="agency-card__link" href="#" target="_blank">
+                                        www.norteandino.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="agency-card">
+                <div class="agency-card__header">
+                    <img class="agency-card__header-image" src="../assets/img/agency_placeholder.jpg" alt="Agency Image">
+                    <div class="agency-card__header-overlay">
+                        <h3 class="agency-card__title">Agencia Sur Andino</h3>
+                        <div class="rating">
+                            <input class="rating__input" type="radio" id="sur-5" name="rating-sur" value="5"/>
+                            <label class="rating__star" for="sur-5">★</label>
+                            <input class="rating__input" type="radio" id="sur-4" name="rating-sur" value="4"/>
+                            <label class="rating__star" for="sur-4">★</label>
+                            <input class="rating__input" type="radio" id="sur-3" name="rating-sur" value="3"/>
+                            <label class="rating__star" for="sur-3">★</label>
+                            <input class="rating__input" type="radio" id="sur-2" name="rating-sur" value="2"/>
+                            <label class="rating__star" for="sur-2">★</label>
+                            <input class="rating__input" type="radio" id="sur-1" name="rating-sur" value="1"/>
+                            <label class="rating__star" for="sur-1">★</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="agency-card__flip-container">
+                    <div class="agency-card__inner">
+                        <div class="agency-card__face agency-card__face--front">
+                            <p class="agency-card__summary">Especialistas en experiencias culturales y gastronómicas del sur jujeño.</p>
+                            <ul class="agency-card__features">
+                                <li class="agency-card__feature">Tours gastronómicos regionales</li>
+                                <li class="agency-card__feature">Visitas a bodegas artesanales</li>
+                                <li class="agency-card__feature">Caminatas guiadas por pueblos históricos</li>
+                            </ul>
+                        </div>
+                        <div class="agency-card__face agency-card__face--back">
+                            <h3 class="agency-card__subtitle">Detalles</h3>
+                            <div class="agency-card__info">
+                                <p class="agency-card__detail"><strong>Dirección:</strong> Calle San Martín 245, San Salvador de Jujuy</p>
+                                <p class="agency-card__detail"><strong>Teléfono:</strong> (0388) 421-8890</p>
+                                <p class="agency-card__detail"><strong>Email:</strong> contacto@surandino.com</p>
+                                <p class="agency-card__detail"><strong>Sitio web:</strong>
+                                    <a class="agency-card__link" href="#" target="_blank">
+                                        www.surandino.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="agency-card">
+                <div class="agency-card__header">
+                    <img class="agency-card__header-image" src="../assets/img/agency_placeholder.jpg" alt="Agency Image">
+                    <div class="agency-card__header-overlay">
+                        <h3 class="agency-card__title">Agencia Este Aventura</h3>
+                        <div class="rating">
+                            <input class="rating__input" type="radio" id="este-5" name="rating-este" value="5"/>
+                            <label class="rating__star" for="este-5">★</label>
+                            <input class="rating__input" type="radio" id="este-4" name="rating-este" value="4"/>
+                            <label class="rating__star" for="este-4">★</label>
+                            <input class="rating__input" type="radio" id="este-3" name="rating-este" value="3"/>
+                            <label class="rating__star" for="este-3">★</label>
+                            <input class="rating__input" type="radio" id="este-2" name="rating-este" value="2"/>
+                            <label class="rating__star" for="este-2">★</label>
+                            <input class="rating__input" type="radio" id="este-1" name="rating-este" value="1"/>
+                            <label class="rating__star" for="este-1">★</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="agency-card__flip-container">
+                    <div class="agency-card__inner">
+                        <div class="agency-card__face agency-card__face--front">
+                            <p class="agency-card__summary">Expertos en turismo aventura, senderismo y actividades al aire libre.</p>
+                            <ul class="agency-card__features">
+                                <li class="agency-card__feature">Trekking en selva de yungas</li>
+                                <li class="agency-card__feature">Circuitos de mountain bike</li>
+                                <li class="agency-card__feature">Actividades de observación de fauna</li>
+                            </ul>
+                        </div>
+                        <div class="agency-card__face agency-card__face--back">
+                            <h3 class="agency-card__subtitle">Detalles</h3>
+                            <div class="agency-card__info">
+                                <p class="agency-card__detail"><strong>Dirección:</strong> Av. Forestal 890, Libertador Gral. San Martín</p>
+                                <p class="agency-card__detail"><strong>Teléfono:</strong> (0388) 478-3321</p>
+                                <p class="agency-card__detail"><strong>Email:</strong> reservas@esteaventura.com</p>
+                                <p class="agency-card__detail"><strong>Sitio web:</strong>
+                                    <a class="agency-card__link" href="#" target="_blank">
+                                        www.esteaventura.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="agency-card">
+                <div class="agency-card__header">
+                    <img class="agency-card__header-image" src="../assets/img/agency_placeholder.jpg" alt="Agency Image">
+                    <div class="agency-card__header-overlay">
+                        <h3 class="agency-card__title">Agencia Oeste Altiplano</h3>
+                        <div class="rating">
+                            <input class="rating__input" type="radio" id="oeste-5" name="rating-oeste" value="5"/>
+                            <label class="rating__star" for="oeste-5">★</label>
+                            <input class="rating__input" type="radio" id="oeste-4" name="rating-oeste" value="4"/>
+                            <label class="rating__star" for="oeste-4">★</label>
+                            <input class="rating__input" type="radio" id="oeste-3" name="rating-oeste" value="3"/>
+                            <label class="rating__star" for="oeste-3">★</label>
+                            <input class="rating__input" type="radio" id="oeste-2" name="rating-oeste" value="2"/>
+                            <label class="rating__star" for="oeste-2">★</label>
+                            <input class="rating__input" type="radio" id="oeste-1" name="rating-oeste" value="1"/>
+                            <label class="rating__star" for="oeste-1">★</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="agency-card__flip-container">
+                    <div class="agency-card__inner">
+                        <div class="agency-card__face agency-card__face--front">
+                            <p class="agency-card__summary">Especialistas en travesías por la Puna, lagunas altoandinas y salares.</p>
+                            <ul class="agency-card__features">
+                                <li class="agency-card__feature">Travesías 4x4 por la Puna</li>
+                                <li class="agency-card__feature">Fotografía de paisajes extremos</li>
+                                <li class="agency-card__feature">Visitas a lagunas altoandinas</li>
+                            </ul>
+                        </div>
+                        <div class="agency-card__face agency-card__face--back">
+                            <h3 class="agency-card__subtitle">Detalles</h3>
+                            <div class="agency-card__info">
+                                <p class="agency-card__detail"><strong>Dirección:</strong> Ruta Provincial 7, Abra Pampa</p>
+                                <p class="agency-card__detail"><strong>Teléfono:</strong> (0388) 402-7712</p>
+                                <p class="agency-card__detail"><strong>Email:</strong> info@oestealtiplano.com</p>
+                                <p class="agency-card__detail"><strong>Sitio web:</strong>
+                                    <a class="agency-card__link" href="#" target="_blank">
+                                        www.oestealtiplano.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__section footer__section--newsletter">
+                <h4 class="footer__title">Newsletter</h4>
+                <form class="newsletter-form" action="#">
+                    <input class="newsletter-form__input" type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="newsletter-form__button">Suscribirse</button>
+                </form>
+            </section>
+            <section class="footer__section footer__section--social">
+                <h4 class="footer__title">Síguenos</h4>
+                <div class="social-links">
+                    <a class="social-links__link" href="#">Facebook</a>
+                    <a class="social-links__link" href="#">Instagram</a>
+                    <a class="social-links__link" href="#">Twitter</a>
+                </div>
+            </section>
+            <section class="footer__section footer__section--map">
+                <h4 class="footer__title">Nuestra Ubicación</h4>
+                <div class="map-container">
+                    <iframe
+                            class="map-container__iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.999999999!2d-58.381559!3d-34.603684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac7ff000001%3A0x123456789abcdef!2sObelisco!5e0!3m2!1ses-419!2sar!4v1700000000000"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">&copy; 2026</p>
+        </div>
+    </footer>
+</body>
+</html>

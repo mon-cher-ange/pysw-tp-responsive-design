@@ -1,0 +1,172 @@
+/* SECCIÓN */
+.pricing {
+    padding: 4rem 2rem;
+    background-color: var(--bg-soft-color);
+}
+
+/* TÍTULO */
+.pricing__title {
+    position: relative;
+    padding: 5rem 0 3rem;
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--text-color);
+    font-family: var(--font-title), serif;
+}
+
+.pricing__title::after {
+    content: "";
+    width: 100px;
+    height: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* CONTENEDOR */
+.pricing__table-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+/* TABLA */
+.pricing__table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+}
+
+/* HEAD */
+.pricing__table th {
+    background-color: var(--bg-soft-color);
+    color: var(--text-color);
+    font-family: var(--font-price), sans-serif;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* CELDAS */
+.pricing__table td {
+    font-family: var(--font-body), sans-serif;
+    padding: 1.5em;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-color);
+    transition: var(--transition-smooth);
+}
+
+/* HOVER */
+.pricing__table tr {
+    transition: var(--transition-smooth);
+}
+
+.pricing__table tr:hover {
+    background-color: var(--bg-soft-color);
+    transition: background 0.3s ease;
+}
+
+/* Ultima fila sin borde */
+.dest-pricing__table tr:last-child td {
+    border-bottom: none;
+}
+
+/* TOOLTIP */
+.tooltip {
+    position: relative;
+    display: inline-block; /* 🔥 clave */
+    margin-left: 6px;
+    cursor: pointer;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.tooltip__text {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: var(--text-color);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+
+    font-size: 0.8rem;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+    z-index: 10; /* 🔥 importante */
+}
+
+/* flechita */
+.tooltip__text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--text-color) transparent transparent transparent;
+}
+
+/* mostrar tooltip */
+.tooltip:hover .tooltip__text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .pricing__table thead {
+        display: none;
+    }
+
+    .pricing__table,
+    .pricing__table tbody,
+    .pricing__table tr,
+    .pricing__table td {
+        display: block;
+        width: 100%;
+    }
+
+    .pricing__table tr {
+        margin-bottom: 1rem;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+    }
+
+    .pricing__table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        border: none;
+    }
+
+    .pricing__table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: var(--accent-color);
+    }
+}
