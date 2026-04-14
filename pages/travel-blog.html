@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/travel-blog.css">
 </head>
 <body>
     <header class="header">
@@ -33,7 +34,170 @@
             </nav>
         </div>
     </header>
-    <main></main>
+    <main class="blog-main">
+        <section class="blog-header">
+            <h1 class="blog-header__title">Blog de Destinos</h1>
+            <p class="blog-header__subtitle">Descubre historias e inspiración de viajeros</p>
+        </section>
+
+        <!-- Inputs ocultos para filtrado (fuera del contenedor) -->
+        <input type="radio" name="category" id="all" checked>
+        <input type="radio" name="category" id="cultural">
+        <input type="radio" name="category" id="natural">
+        <input type="radio" name="category" id="playa">
+
+        <div class="blog-container">
+            <!-- Filtro por categorías -->
+            <aside class="blog-sidebar">
+                <div class="filter-section">
+                    <h3 class="filter-section__title">Categorías</h3>
+                    <div class="filter-tags">
+                        <label for="all" class="filter-tag filter-tag--active">Todos</label>
+                        <label for="cultural" class="filter-tag">Cultural</label>
+                        <label for="natural" class="filter-tag">Naturaleza</label>
+                        <label for="playa" class="filter-tag">Playa</label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Grid de artículos (estilo newspaper) -->
+            <section class="blog-grid">
+                <!-- Artículo destacado (principal) -->
+                <article class="article article--featured article--reveal" data-category="natural">
+                    <div class="article__image-container">
+                        <img class="article__image" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/40/db/the-great-salinas-grandes.jpg?w=800&h=400&s=1" alt="Salinas Grandes">
+                    </div>
+                    <div class="article__content">
+                        <span class="article__category">Naturaleza</span>
+                        <h2 class="article__title">Salinas Grandes: El Desierto de Sal más Puro</h2>
+                        <p class="article__excerpt">A 3.450 metros de altura, un desierto blanco infinito que se refleja en piletones de agua cristalina. Una experiencia visual única en Argentina.</p>
+                        <div class="article__meta">
+                            <span class="article__author">Por María González</span>
+                            <span class="article__date">15 de Abril, 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículos secundarios -->
+                <article class="article article--reveal" data-category="cultural">
+                    <div class="article__image-container">
+                        <img class="article__image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbR4bLhL-DmQvMR1iGEmDx268NBcmk4GDBw&s" alt="Purmamarca">
+                    </div>
+                    <div class="article__content">
+                        <span class="article__category">Cultural</span>
+                        <h3 class="article__title">Purmamarca y sus Siete Colores</h3>
+                        <p class="article__excerpt">El icónico Cerro de los Siete Colores domina este pintoresco pueblo con su feria artesanal.</p>
+                        <div class="article__meta">
+                            <span class="article__author">Por Carlos Ruiz</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article article--reveal" data-category="cultural">
+                    <div class="article__image-container">
+                        <img class="article__image" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlkfEJE2Q2Wdf3rAbFFDeld36qksqAtKH4g_7ycc4e7mah_C2uXV80MFrc8s_MqQj4csDhN9Y8L6ppJSF666TMuGTEFL0c-CVBs5lhwMzhV3uQXYct_NBGCc6Zt11K7uvJf8g=s680-w680-h510-rw" alt="Machu Picchu">
+                    </div>
+                    <div class="article__content">
+                        <span class="article__category">Cultural</span>
+                        <h3 class="article__title">Machu Picchu: La Ciudad Perdida de los Incas</h3>
+                        <p class="article__excerpt">Descubre el tesoro arqueológico que revela los secretos de una civilización milenaria.</p>
+                        <div class="article__meta">
+                            <span class="article__author">Por Ana López</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article article--reveal" data-category="natural">
+                    <div class="article__image-container">
+                        <img class="article__image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Iguazu_Cataratas2.jpg/330px-Iguazu_Cataratas2.jpg" alt="Cataratas del Iguazú">
+                    </div>
+                    <div class="article__content">
+                        <span class="article__category">Naturaleza</span>
+                        <h3 class="article__title">Cataratas del Iguazú: Maravilla Natural</h3>
+                        <p class="article__excerpt">Siente la fuerza de una de las siete maravillas naturales del mundo rodeadas de selva subtropical.</p>
+                        <div class="article__meta">
+                            <span class="article__author">Por Pedro Martín</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article article--reveal" data-category="cultural">
+                    <div class="article__image-container">
+                        <img class="article__image" src="https://cdn-imgix.headout.com/mircobrands-content/image/3c771d9025aca83d1cc863b347394baa-AdobeStock_301097919.jpeg?auto=compress%2Cformat&q=90&crop=faces&fit=crop" alt="Acrópolis de Atenas">
+                    </div>
+                    <div class="article__content">
+                        <span class="article__category">Cultural</span>
+                        <h3 class="article__title">Atenas: Cuna de la Democracia</h3>
+                        <p class="article__excerpt">Camina por la Acrópolis y descubre los templos que definieron la arquitectura occidental.</p>
+                        <div class="article__meta">
+                            <span class="article__author">Por Diego Sánchez</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article article--reveal" data-category="natural">
+                    <div class="article__image-container">
+                        <img class="article__image" src="https://wp-content.miviaje.com/2017/11/auroras-boreales-768x508.jpg?auto=format%2Ccompress&quality=75&width=640&height=360&fit=cover&gravity=center&sharp=true&progressive=true" alt="Auroras boreales en Islandia">
+                    </div>
+                    <div class="article__content">
+                        <span class="article__category">Naturaleza</span>
+                        <h3 class="article__title">Islandia: Tierra de Fuego y Hielo</h3>
+                        <p class="article__excerpt">Volcanes, géiseres activos y cascadas gigantescas bajo la luz mágica de la aurora boreal.</p>
+                        <div class="article__meta">
+                            <span class="article__author">Por Sofia Torres</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article article--reveal" data-category="playa">
+                    <div class="article__image-container">
+                        <img class="article__image" src="https://scubafinders.com/blog/wp-content/uploads/2025/04/maldivas-turismo.webp" alt="Islas Maldivas">
+                    </div>
+                    <div class="article__content">
+                        <span class="article__category">Playa</span>
+                        <h3 class="article__title">Islas Maldivas: Paraíso Tropical</h3>
+                        <p class="article__excerpt">El paraíso definitivo con arenas blancas, aguas cristalinas y resorts de lujo sobre el agua.</p>
+                        <div class="article__meta">
+                            <span class="article__author">Por Laura Martínez</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <!-- Sección de comentarios -->
+        <section class="comments-section">
+            <h2 class="comments-section__title">Comentarios de Lectores</h2>
+            <div class="comments-list">
+                <article class="comment comment--reveal">
+                    <div class="comment__avatar">M</div>
+                    <div class="comment__content">
+                        <h4 class="comment__author">María García</h4>
+                        <p class="comment__text">¡Excelente artículo! Me inspiró a planificar mi próximo viaje a los Andes.</p>
+                        <span class="comment__date">Hace 2 días</span>
+                    </div>
+                </article>
+
+                <article class="comment comment--reveal">
+                    <div class="comment__avatar">J</div>
+                    <div class="comment__content">
+                        <h4 class="comment__author">Juan Pérez</h4>
+                        <p class="comment__text">Las fotos son increíbles. ¿Dónde puedo encontrar más información sobre las agencias locales?</p>
+                        <span class="comment__date">Hace 1 día</span>
+                    </div>
+                </article>
+
+                <article class="comment comment--reveal">
+                    <div class="comment__avatar">C</div>
+                    <div class="comment__content">
+                        <h4 class="comment__author">Carlos López</h4>
+                        <p class="comment__text">Visited this place last year. Definitely worth every penny!</p>
+                        <span class="comment__date">Hace 5 horas</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer__container">
             <section class="footer__section footer__section--newsletter">
