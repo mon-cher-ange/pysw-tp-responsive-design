@@ -1,8 +1,9 @@
 // Theme and Preferences.
-$(document).ready(function () {
+$(function () {
 
     // Load saved preference.
-    let savedTheme = localStorage.getItem("theme") || "light";
+    let defaultTheme = "light"
+    let savedTheme = localStorage.getItem("theme") || defaultTheme;
     $("html").attr("data-bs-theme", savedTheme);
 
     // Apply initial state.
@@ -11,60 +12,34 @@ $(document).ready(function () {
     // Toggle-theme button.
     $("#theme-toggle").on("click", function () {
 
-        let current = $("html").attr("data-bs-theme");
+        let $html = $("html")
+        let current = $html.attr("data-bs-theme");
         let next = current === "light" ? "dark" : "light";
 
-        $("html").attr("data-bs-theme", next);
+        $html.attr("data-bs-theme", next);
         localStorage.setItem("theme", next);
 
-        applyTheme(next);
-
         // Change toggle-theme icon.
-        $(this).find("i").toggleClass("bi-moon bi-sun");
+        $(this)
+            .find("i")
+            .toggleClass("bi-moon-fill bi-sun-fill");
+        $(this).toggleClass("btn-dark btn-light")
+
+        applyTheme(next);
     });
 
     // Apply dark-mode.
     function applyTheme(theme) {
 
-        // Navbar
-        if (theme === "dark") {
-            $("#main-navbar")
-                .removeClass("bg-light navbar-light")
-                .addClass("bg-dark navbar-dark");
-        } else {
-            $("#main-navbar")
-                .removeClass("bg-dark navbar-dark")
-                .addClass("bg-light navbar-light");
-        }
-
-        // Hero overlay.
-        if (theme === "dark") {
-            $("#hero-overlay")
-                .removeClass("text-dark")
-                .addClass("text-light")
-                .css({
-                    "text-shadow": "0 0 12px rgba(0,0,0,1)",
-                    "font-size": "clamp(2rem, 4vw, 3.5rem)"
-                });
-        } else {
-            $("#hero-overlay")
-                .removeClass("text-light")
-                .addClass("text-dark")
-                .css({
-                    "text-shadow": "0 0 10px rgba(255,255,255,0.9)",
-                    "font-size": "clamp(2rem, 4vw, 3.5rem)"
-                });
-        }
-
         // Carousel arrow icons.
+        // TODO: Figure out how those buttons/indicators work (this is a hack).
         $(".carousel-control-prev-icon, .carousel-control-next-icon")
             .css("filter", "invert(1)");
     }
 });
 
-
 // Hero
-$(document).ready(function () {
+$(function () {
 
     function typeEffect(element, speed) {
         let text = element.text();
@@ -85,29 +60,48 @@ $(document).ready(function () {
     setTimeout(() => typeEffect($("#hero-subtitle"), 50), 1200);
 });
 
-
 // Cards
-$(document).ready(function () {
+$(function () {
 
-    $(".card").hover(
-        function () {
-            $(this).css({
-                transform: "scale(1.05)",
-                transition: "0.3s"
-            });
-        },
-        function () {
-            $(this).css({
-                transform: "scale(1)",
-                transition: "0.3s"
-            });
-        }
-    );
+    if ($("#page-home").length) {
+        $(".card")
+            .on("mouseenter",
+                function () {
+                    $(this).css({
+                        transform: "rotate(-5deg)",
+                        transition: "0.3s"
+                    });
+                })
+            .on("mouseleave",
+                function () {
+                    $(this).css({
+                        transform: "rotate(0)",
+                        transition: "0.3s"
+                    });
+                })
+    }
+
+    if ($("#page-agencies").length) {
+        $(".card")
+            .on("mouseenter",
+                function () {
+                    $(this).css({
+                        transform: "scale(1.05)",
+                        transition: "0.3s"
+                    });
+                })
+            .on("mouseleave",
+                function () {
+                    $(this).css({
+                        transform: "scale(1)",
+                        transition: "0.3s"
+                    });
+                })
+    }
 });
 
-
 // Counters
-$(document).ready(function () {
+$(function () {
 
     $(".counter").each(function () {
         let $this = $(this);
@@ -129,7 +123,8 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
+// Links (underline)
+$(function () {
     $(".nav-underline").each(function () {
         $(this).find(".underline").css({
             "position": "absolute",
@@ -141,7 +136,7 @@ $(document).ready(function () {
             "transition": "width 0.3s ease"
         });
 
-        // Animación hover
+        // Hover animation
         $(this).hover(
             function () {
                 $(this).find(".underline").css("width", "100%");
@@ -152,6 +147,47 @@ $(document).ready(function () {
         );
     });
 
+});
+
+// Page 3: Agencies
+// Rating
+$(function () {
+
+    $(".rating .star").on("click", function (e) {
+        let value = $(this).data("value");
+        let group = $(this).parent().data("rating-group");
+        let $star = $(`.rating[data-rating-group='${group}'] .star`);
+
+        $star.removeClass("active bi-star-fill").addClass("bi-star");
+
+        $star.each(function () {
+            if ($(this).data("value") <= value) {
+                $(this)
+                    .addClass("active bi-star-fill")
+                    .removeClass("bi-star");
+            }
+        });
+    });
+
+    $(".flip-indicator")
+        .on("click", function (e) {
+            e.stopPropagation();
+            $(this)
+                .closest(".flip-lower")
+                .toggleClass("flipped");
+        })
+        .on("mouseenter",
+            function () {
+                $(this)
+                    .find(".flip-indicator__icon")
+                    .addClass("rotate");
+            })
+        .on("mouseleave",
+            function () {
+                $(this)
+                    .find(".flip-indicator__icon")
+                    .removeClass("rotate");
+            })
 });
 
 // ------------------
