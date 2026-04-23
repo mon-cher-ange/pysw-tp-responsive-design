@@ -1,62 +1,28 @@
 :root {
-    /* Colors */
-    --primary-color: #DED9D1;
-    --accent-color: #C5A021;
-    --accent-dark-color: #9B7D1A;
+    --bs-body-bg: #FDFCF8;          /* Color de fondo principal del documento. */
+    --bs-body-color: #141414;       /* Color de texto principal. */
 
-    --text-color: #141414;
-    --text-muted: #666666;
-    --tooltip-text-color: #F5F5F5;
+    --bs-secondary-bg: #F2F0E9;     /* Color de fondo secundario. */
+    --bs-secondary-color: #666666;  /* Color de texto secundario. */
 
-    --bg-color: #FDFCF8;
-    --bg-soft-color: #F2F0E9;
-    --card-bg: #F8F4EC;
+    --bs-tertiary-bg: #F8F4EC;      /* Color de fondo terciario. */
+    --bs-tertiary-color: #8A8A8A;   /* Color de texto terciario. */
 
-    --border-color: rgba(20, 20, 20, 0.08);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --header-height: 80px;
+    --bs-primary: #C5A021;
+    --custom-primary-hover: #9B7D1A;
 
-    /* Border radius */
-    --radius-small: 4px;
-    --radius-medium: 8px;
-    --radius-large: 12px;
-
-    /* Spacing & Typography */
-    --line-height: 1.6;
-    --section-padding: 4rem 2rem;
-    --card-padding: 1rem;
-
-    --font-title: 'Bodoni Moda', serif;
-    --font-subtitle: 'Spectral', serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
-    --font-price: 'Tenor Sans', sans-serif;
 }
 
-body.dark-mode {
-    --bg-color: #121212;
-    --bg-soft-color: #1E1E1E;
-    --card-bg: #1A1A1A;
+html[data-bs-theme="dark"] {
+    --bs-body-bg: #121212;
+    --bs-body-color: #F5F5F5;
 
-    --text-color: #F5F5F5;
-    --text-muted: #B0B0B0;
-    --tooltip-text-color: #141414;
+    --bs-secondary-bg: #1E1E1E;
+    --bs-secondary-color: #B0B0B0;
 
-    --border-color: #2C2C2C;
+    --bs-tertiary-bg: #1A1A1A;
+    --bs-tertiary-color: #999999;
 
-    --accent-color: #D4AF37;
-    --accent-dark-color: #B8962F;
-}
-
-.theme-toggle {
-    background: none;
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    padding: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: var(--transition-smooth);
-}
-
-.theme-toggle:hover {
-    background-color: var(--bg-soft-color);
+    --bs-primary: #D4AF37;
+    --custom-primary-hover: #B8962F;
 }
