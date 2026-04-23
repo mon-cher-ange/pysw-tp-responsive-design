@@ -6,9 +6,10 @@
     <title>Bienvenido</title>
     <link href="css/bootstrap-icons.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
 </head>
-<body>
-<nav id="main-navbar" class="navbar navbar-expand-lg bg-light navbar-light shadow-sm py-3">
+<body id="page-home">
+<nav class="navbar navbar-expand-lg bg-body text-body shadow-sm py-3 sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
             <i class="bi bi-balloon-heart-fill fs-3"></i>
@@ -18,7 +19,7 @@
             <i class="bi bi-list fs-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-3">
                 <li class="nav-item">
                     <a class="nav-link position-relative nav-underline" href="index.html">
                         <i class="bi bi-house-door"></i> Inicio
@@ -44,8 +45,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <button id="theme-toggle" class="btn btn-outline-secondary ms-lg-3">
-                        <i class="bi bi-moon"></i>
+                    <button id="theme-toggle" class="btn btn-dark ms-lg-3">
+                        <i class="bi bi-moon-fill" style="color: #ffc107"></i>
                     </button>
                 </li>
             </ul>
@@ -59,9 +60,9 @@
                style="object-fit: cover; height: 60vh;">
             <source src="assets/video/hero_placeholder.mp4" type="video/mp4">
         </video>
-        <div id="hero-overlay" class="position-absolute top-50 start-50 translate-middle text-center">
-            <h1 class="display-4 fw-bold" id="hero-title">Descubre la magia del Norte</h1>
-            <p class="lead">Experiencias inolvidables en cada rincón</p>
+        <div id="hero-overlay" class="bg-body text-body bg-opacity-50 rounded-0 py-3 w-100 position-absolute top-50 start-50 translate-middle text-center">
+            <h1 class="display-1 fw-bold" id="hero-title">Descubre la magia del Norte</h1>
+            <p class="fs-3">Experiencias inolvidables en cada rincón</p>
         </div>
     </section>
     <section aria-labelledby="titulo-destinos" class="container py-5">
@@ -70,40 +71,42 @@
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card h-100 shadow-sm">
                     <img alt="Purmamarca" class="card-img-top" src="assets/img/destination_placeholder.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">Purmamarca</h5>
-                        <p class="card-text">Cerro de los siete colores.</p>
+                    <div class="card-body bg-body-tertiary">
+                        <h5 class="card-title fw-semibold">Purmamarca</h5>
+                        <p class="card-text text-body-secondary">Cerro de los siete colores.</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card h-100 shadow-sm">
                     <img alt="Tilcara" class="card-img-top" src="assets/img/destination_placeholder.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">Tilcara</h5>
-                        <p class="card-text">Pucará y Garganta del Diablo.</p>
+                    <div class="card-body bg-body-tertiary">
+                        <h5 class="card-title fw-semibold">Tilcara</h5>
+                        <p class="card-text text-body-secondary">Pucará y Garganta del Diablo.</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card h-100 shadow-sm">
                     <img alt="Humahuaca" class="card-img-top" src="assets/img/destination_placeholder.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">Humahuaca</h5>
-                        <p class="card-text">Cerro Hornocal – 14 Colores.</p>
+                    <div class="card-body bg-body-tertiary">
+                        <h5 class="card-title fw-semibold">Humahuaca</h5>
+                        <p class="card-text text-body-secondary">Cerro Hornocal – 14 Colores.</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <div class="card h-100 shadow-sm">
                     <img alt="Salinas Grandes" class="card-img-top" src="assets/img/destination_placeholder.jpg">
-                    <div class="card-body">
-                        <h5 class="card-title">Salinas Grandes</h5>
-                        <p class="card-text">Desierto Blanco a 3.450 msnm.</p>
+                    <div class="card-body bg-body-tertiary">
+                        <h5 class="card-title fw-semibold">Salinas Grandes</h5>
+                        <p class="card-text text-body-secondary">Desierto Blanco a 3.450 msnm.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <section>
         <div class="row text-center mt-5">
             <div class="col-12 col-md-4 mb-4">
                 <span class="d-block fs-1 fw-bold counter" data-target="500">0</span>
@@ -124,31 +127,33 @@
         <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active text-center">
-                    <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="120" alt="Testimonio 1">
+                    <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="220" alt="Testimonio 1">
                     <blockquote class="blockquote">"Un viaje increíble, la organización fue perfecta."</blockquote>
-                    <p class="fw-bold">– Veronica Pérez</p>
+                    <p class="fst-italic fw-bold text">– Veronica Pérez</p>
                 </div>
                 <div class="carousel-item text-center">
-                    <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="120" alt="Testimonio 2">
+                    <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="220" alt="Testimonio 2">
                     <blockquote class="blockquote">"La atención de las agencias locales superó mis expectativas."</blockquote>
-                    <p class="fw-bold">– Carolina Gómez</p>
+                    <p class="fst-italic fw-bold text">– Carolina Gómez</p>
                 </div>
                 <div class="carousel-item text-center">
-                    <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="120" alt="Testimonio 3">
+                    <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="220" alt="Testimonio 3">
                     <blockquote class="blockquote">"Los paisajes de Jujuy son únicos en el mundo."</blockquote>
-                    <p class="fw-bold">– María García</p>
+                    <p class="fst-italic fw-bold text">– María García</p>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
         </div>
     </section>
 </main>
-<footer class="bg-dark text-light pt-5 mt-5">
+<footer class="container-fluid text-body bg-body-tertiary pt-5 mt-5">
     <div class="container">
         <div class="row g-4 align-items-start justify-content-center text-center">
             <div class="col-md-4">
@@ -161,9 +166,9 @@
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Redes</h5>
                 <div class="d-flex justify-content-center gap-3 fs-4">
-                    <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-body"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-body"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-body"><i class="bi bi-twitter-x"></i></a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -173,7 +178,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center py-3 mt-4 border-top border-secondary">
+        <div class="text-center py-3 mt-4 border-top">
             <small>&copy; 2026 Turismo del Norte</small>
         </div>
     </div>
