@@ -52,210 +52,256 @@
         </div>
     </div>
 </nav>
-<main>
+<main class="container">
     <section class="filters">
-        <!-- inputs -->
-        <input checked id="all" name="category" type="radio">
-        <input id="cultural" name="category" type="radio">
-        <input id="naturaleza" name="category" type="radio">
-        <input id="playa" name="category" type="radio">
 
         <!-- botones -->
-        <div class="filters__buttons">
-            <label for="all">Todos</label>
-            <label for="cultural">Cultural</label>
-            <label for="naturaleza">Naturaleza</label>
-            <label for="playa">Playa</label>
+        <div class="filtros d-flex justify-content-center gap-3 my-4">
+            <button class="filter-btn btn btn btn-dark" data-filter="all">Todos</button>
+            <button class="filter-btn btn btn btn-dark" data-filter="cultural">Cultural</button>
+            <button class="filter-btn btn btn btn-dark" data-filter="naturaleza">Naturaleza</button>
+            <button class="filter-btn btn btn btn-dark" data-filter="playa">Playa</button>
         </div>
 
         <!-- galeria -->
-        <section class="gallery">
-            <article class="dest-card cultural">
-                <img alt="Cerro de los Siete Colores en Purmamarca, Jujuy"
-                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbR4bLhL-DmQvMR1iGEmDx268NBcmk4GDBw&s">
-                <div class="dest-card__info">
-                    <h3>Purmamarca</h3>
-                    <p>Hogar del icónico Cerro de los Siete Colores. Este pintoresco pueblo destaca por su feria
-                        artesanal y su arquitectura de adobe que parece fundirse con la montaña.</p>
-                </div>
-            </article>
-            <article class="dest-card cultural">
-                <img alt="Pucará de Tilcara, sitio arqueológico prehispánico"
-                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLiAys0MJB8WlbJWkwC5zlvkrrx1PXY3M7Dg&s">
-                <div class="dest-card__info">
-                    <h3>Tilcara</h3>
-                    <p>Considerada la capital arqueológica de la región. No puedes perderte el Pucará, una antigua
-                        fortaleza omaguaca, y su vibrante vida nocturna con peñas folclóricas.</p>
+        <section id="masonry-grid" class="row">
+
+            <div class="col-12 col-md-6 col-lg-4 grid-sizer"></div>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="Cerro de los Siete Colores en Purmamarca, Jujuy"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbR4bLhL-DmQvMR1iGEmDx268NBcmk4GDBw&s">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Purmamarca</h5>
+                        <p class="card-text">Hogar del icónico Cerro de los Siete Colores. Este pintoresco pueblo destaca por su feria
+                            artesanal y su arquitectura de adobe que parece fundirse con la montaña.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card cultural">
-                <img alt="Serranías del Hornocal, el cerro de 14 colores"
-                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDUsI3gv_CH6N_IzXfZBAZOMSkg17sGaI8PQ&s">
-                <div class="dest-card__info">
-                    <h3>Humahuaca</h3>
-                    <p>Ciudad histórica que da nombre a la Quebrada. Desde aquí se accede al Hornocal (el Cerro de
-                        14 Colores), una formación geológica que te dejará sin aliento.</p>
-                </div>
-            </article>
-            <article class="dest-card cultural">
-                <img alt="Ruinas de Machu Picchu en Perú"
-                     src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlkfEJE2Q2Wdf3rAbFFDeld36qksqAtKH4g_7ycc4e7mah_C2uXV80MFrc8s_MqQj4csDhN9Y8L6ppJSF666TMuGTEFL0c-CVBs5lhwMzhV3uQXYct_NBGCc6Zt11K7uvJf8g=s680-w680-h510-rw">
-                <div class="dest-card__info">
-                    <h3>Machu Picchu, Perú</h3>
-                    <p>Explora la legendaria ciudadela inca situada en los Andes, un tesoro arqueológico que revela
-                        los secretos de una civilización fascinante.</p>
-                </div>
-            </article>
-            <article class="dest-card cultural">
-                <img alt="El Partenón en la Acrópolis de Atenas"
-                     src="https://cdn-imgix.headout.com/mircobrands-content/image/3c771d9025aca83d1cc863b347394baa-AdobeStock_301097919.jpeg?auto=compress%2Cformat&q=90&crop=faces&fit=crop">
-                <div class="dest-card__info">
-                    <h3>Atenas, Grecia</h3>
-                    <p>Cuna de la democracia y la filosofía. Camina por la Acrópolis y descubre los templos que
-                        definieron la arquitectura del mundo occidental.</p>
-                </div>
-            </article>
-            <article class="dest-card cultural">
-                <img alt="Santuario Fushimi Inari en Kioto"
-                     src="https://www.viajesylugares.com/images/showid2/5867922?w=1200&zc=4">
-                <div class="dest-card__info">
-                    <h3>Kioto, Japón</h3>
-                    <p>El corazón espiritual de Japón. Camina entre miles de toriis rojos y descubre la elegancia de
-                        los jardines zen y la cultura de las geishas.</p>
-                </div>
-            </article>
-            <article class="dest-card cultural">
-                <img alt="El Tesoro de Petra, Jordania"
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Al_Khazneh_Petra_edit_2.jpg/330px-Al_Khazneh_Petra_edit_2.jpg">
-                <div class="dest-card__info">
-                    <h3>Petra, Jordania</h3>
-                    <p>La "Ciudad Rosa" esculpida directamente en la roca por los nabateos hace más de 2,000 años.
-                        Una de las maravillas del mundo antiguo.</p>
-                </div>
-            </article>
-            <article class="dest-card cultural">
-                <img alt="La Alhambra de Granada, España"
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/330px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg">
-                <div class="dest-card__info">
-                    <h3>Granada, España</h3>
-                    <p>Explora la Alhambra, el palacio fortaleza árabe más bello del mundo, y piérdete por las
-                        calles blancas del barrio del Albaicín.</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="naturaleza">
+                    <img class="card-img" alt="Inmensidad blanca de las Salinas Grandes en Jujuy"
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/40/db/the-great-salinas-grandes.jpg?w=900&h=500&s=1">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Salinas Grandes</h5>
+                        <p class="card-text">Un desierto de sal a 3.450 metros de altura. Es uno de los destinos más fotografiados del
+                            mundo por su blanco infinito y sus piletones de agua cristalina.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card naturaleza">
-                <img alt="Inmensidad blanca de las Salinas Grandes en Jujuy"
-                     src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/40/db/the-great-salinas-grandes.jpg?w=900&h=500&s=1">
-                <div class="dest-card__info">
-                    <h3>Salinas Grandes</h3>
-                    <p>Un desierto de sal a 3.450 metros de altura. Es uno de los destinos más fotografiados del
-                        mundo por su blanco infinito y sus piletones de agua cristalina.</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="Pucará, Jujuy"
+                        src="https://universes.art/fileadmin/_processed_/2/c/csm_10-IMG_0546-A_25c38bb0ac.jpg">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Pucará, Jujuy</h5>
+                        <p class="card-text">un importante sitio arqueológico prehispánico situado en la Quebrada de Humahuaca, Jujuy, Argentina. Ocupado entre los siglos XI y XVI d.C. por los tilcaras.</p>
+                    </div>
                 </div>
             </article>
-            <article class="dest-card naturaleza">
-                <img alt="Cataratas del Iguazú desde el lado argentino"
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Iguazu_Cataratas2.jpg/330px-Iguazu_Cataratas2.jpg">
-                <div class="dest-card__info">
-                    <h3>Cataratas del Iguazú</h3>
-                    <p>Siente la fuerza de una de las siete maravillas naturales del mundo, con cientos de saltos de
-                        agua rodeados de selva subtropical.</p>
-                </div>
-            </article>
-            <article class="dest-card naturaleza">
-                <img alt="Auroras boreales sobre una cascada en Islandia"
-                     src="https://wp-content.miviaje.com/2017/11/auroras-boreales-768x508.jpg?auto=format%2Ccompress&quality=75&width=640&height=360&fit=cover&gravity=center&sharp=true&progressive=true">
-                <div class="dest-card__info">
-                    <h3>Islandia</h3>
-                    <p>La tierra del fuego y el hielo. Paisajes dramáticos de volcanes, géiseres activos y cascadas
-                        gigantescas bajo la luz de la aurora boreal.</p>
+            
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="Pucará de Tilcara, sitio arqueológico prehispánico"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLiAys0MJB8WlbJWkwC5zlvkrrx1PXY3M7Dg&s">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Tilcara</h5>
+                        <p class="card-text">Considerada la capital arqueológica de la región. No puedes perderte el Pucará, una antigua
+                            fortaleza omaguaca, y su vibrante vida nocturna con peñas folclóricas.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card naturaleza">
-                <img alt="Fiordos noruegos rodeados de montañas"
-                     src="https://www.civitatis.com/blog/wp-content/uploads/2020/12/que-ver-fiordos-noruegos-1536x1024.jpg">
-                <div class="dest-card__info">
-                    <h3>Fiordos Noruegos</h3>
-                    <p>Navega entre majestuosas entradas de mar rodeadas de acantilados verticales y cascadas que
-                        caen desde alturas de vértigo.</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="playa">
+                    <img class="card-img" alt="Ruinas mayas frente al mar Caribe en Tulum"
+                        src="https://www.viajandoporelmundomundial.com/wp-content/uploads/2021/12/tulm2.jpg.webp">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Tulum, México</h5>
+                        <p class="card-text">La combinación perfecta entre historia maya y playas paradisíacas del Caribe, con un ambiente
+                            eco-chic y cenotes refrescantes.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card naturaleza">
-                <img alt="Safari en el Parque Nacional Serengeti"
-                     src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/4d/e4/8f/serengeti-national-park.jpg?w=600&h=400&s=1">
-                <div class="dest-card__info">
-                    <h3>Serengeti, Tanzania</h3>
-                    <p>Sé testigo de la gran migración y la vida salvaje en estado puro en las llanuras africanas,
-                        hogar de los "cinco grandes".</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="playa">
+                    <img class="card-img" alt="Playa Anse Source d'Argent en Seychelles"
+                        src="https://content-viajes.nationalgeographic.com.es/medio/2019/01/30/187800566_8b6cbeb5_1200x630.jpg">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Islas Seychelles</h5>
+                        <p class="card-text">Playas de ensueño con rocas de granito esculpidas por el mar y arena blanca finísima en medio
+                            del Océano Índico.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card naturaleza">
-                <img alt="Montañas de Torres del Paine en Chile"
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Torres_del_Paine_y_cuernos_del_Paine%2C_montaje.jpg/250px-Torres_del_Paine_y_cuernos_del_Paine%2C_montaje.jpg">
-                <div class="dest-card__info">
-                    <h3>Torres del Paine, Chile</h3>
-                    <p>Uno de los parques nacionales más espectaculares de la Patagonia, famoso por sus macizos de
-                        granito y glaciares azules.</p>
-                </div>
-            </article>
-            <article class="dest-card playa">
-                <img alt="Resort de lujo sobre el agua en Islas Maldivas"
-                     src="https://scubafinders.com/blog/wp-content/uploads/2025/04/maldivas-turismo.webp">
-                <div class="dest-card__info">
-                    <h3>Islas Maldivas</h3>
-                    <p>El paraíso definitivo de arenas blancas y aguas cristalinas, ideal para el buceo y el relax
-                        total en bungalows sobre el océano Índico.</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="Serranías del Hornocal, el cerro de 14 colores"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDUsI3gv_CH6N_IzXfZBAZOMSkg17sGaI8PQ&s">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Humahuaca</h5>
+                        <p class="card-text">Ciudad histórica que da nombre a la Quebrada. Desde aquí se accede al Hornocal (el Cerro de
+                            14 Colores), una formación geológica que te dejará sin aliento.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card playa">
-                <img alt="Ruinas mayas frente al mar Caribe en Tulum"
-                     src="https://www.viajandoporelmundomundial.com/wp-content/uploads/2021/12/tulm2.jpg.webp">
-                <div class="dest-card__info">
-                    <h3>Tulum, México</h3>
-                    <p>La combinación perfecta entre historia maya y playas paradisíacas del Caribe, con un ambiente
-                        eco-chic y cenotes refrescantes.</p>
-                </div>
-            </article>
-            <article class="dest-card playa">
-                <img alt="Laguna de aguas cristalinas en Bora Bora"
-                     src="https://thumbs.dreamstime.com/z/laguna-bora-con-arrecife-de-coral-y-monte-otemanu-panorama-a%C3%A9reo-vibrante-en-aguas-cristalinas-poco-profundas-la-turquesa-398701649.jpg?ct=jpeg">
-                <div class="dest-card__info">
-                    <h3>Bora Bora, Polinesia</h3>
-                    <p>Conocida como la perla del Pacífico, ofrece lagunas de un azul imposible y arrecifes de coral
-                        perfectos para el snorkel.</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="Ruinas de Machu Picchu en Perú"
+                        src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlkfEJE2Q2Wdf3rAbFFDeld36qksqAtKH4g_7ycc4e7mah_C2uXV80MFrc8s_MqQj4csDhN9Y8L6ppJSF666TMuGTEFL0c-CVBs5lhwMzhV3uQXYct_NBGCc6Zt11K7uvJf8g=s680-w680-h510-rw">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Machu Picchu, Perú</h5>
+                        <p class="card-text">Explora la legendaria ciudadela inca situada en los Andes, un tesoro arqueológico que revela
+                            los secretos de una civilización fascinante.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card playa">
-                <img alt="Playa Anse Source d'Argent en Seychelles"
-                     src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fb/42/seychelles.jpg?w=1400&h=500&s=1">
-                <div class="dest-card__info">
-                    <h3>Islas Seychelles</h3>
-                    <p>Playas de ensueño con rocas de granito esculpidas por el mar y arena blanca finísima en medio
-                        del Océano Índico.</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="El Partenón en la Acrópolis de Atenas"
+                        src="https://cdn-imgix.headout.com/mircobrands-content/image/3c771d9025aca83d1cc863b347394baa-AdobeStock_301097919.jpeg?auto=compress%2Cformat&q=90&crop=faces&fit=crop">
+                    <div class="card-img-overlay">
+                        <h3>Atenas, Grecia</h3>
+                        <p class="card-text">Cuna de la democracia y la filosofía. Camina por la Acrópolis y descubre los templos que
+                            definieron la arquitectura del mundo occidental.</p>
+                    </div>
                 </div>
             </article>
 
-            <article class="dest-card playa">
-                <img alt="Playa y acantilados en Uluwatu, Bali"
-                     src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ee/bb/7f/amazing.jpg?w=600&h=400&s=1">
-                <div class="dest-card__info">
-                    <h3>Bali, Indonesia</h3>
-                    <p>Mucho más que playa: una mezcla única de templos sagrados a la orilla del mar, surf de clase
-                        mundial y selvas tropicales.</p>
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="Santuario Fushimi Inari en Kioto"
+                        src="https://content-viajes.nationalgeographic.com.es/medio/2024/06/27/templos-de-kioto_7677807a_240627130332_1280x853.jpg">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Kioto, Japón</h5>
+                        <p class="card-text">El corazón espiritual de Japón. Camina entre miles de toriis rojos y descubre la elegancia de
+                            los jardines zen y la cultura de las geishas.</p>
+                    </div>
                 </div>
             </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="playa">
+                    <img class="card-img" alt="Laguna de aguas cristalinas en Bora Bora"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEAMax46tKvVdhhnUhczJZCqMRcP926BZbSg&s">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Bora Bora, Polinesia</h5>
+                        <p class="card-text">Conocida como la perla del Pacífico, ofrece lagunas de un azul imposible y arrecifes de coral
+                            perfectos para el snorkel.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="naturaleza">
+                    <img class="card-img" alt="Cataratas del Iguazú desde el lado argentino"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Iguazu_Cataratas2.jpg/330px-Iguazu_Cataratas2.jpg">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Cataratas del Iguazú</h5>
+                        <p class="card-text">Siente la fuerza de una de las siete maravillas naturales del mundo, con cientos de saltos de
+                            agua rodeados de selva subtropical.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="cultural">
+                    <img class="card-img" alt="La Alhambra de Granada, España"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/330px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Granada, España</h5>
+                        <p>Explora la Alhambra, el palacio fortaleza árabe más bello del mundo, y piérdete por las
+                            calles blancas del barrio del Albaicín.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="naturaleza">
+                    <img class="card-img" alt="Auroras boreales sobre una cascada en Islandia"
+                            src="https://wp-content.miviaje.com/2017/11/auroras-boreales-768x508.jpg?auto=format%2Ccompress&quality=75&width=640&height=360&fit=cover&gravity=center&sharp=true&progressive=true">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Islandia</h5>
+                        <p class="card-text">La tierra del fuego y el hielo. Paisajes dramáticos de volcanes, géiseres activos y cascadas
+                            gigantescas bajo la luz de la aurora boreal.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="naturaleza">
+                    <img class="card-img" alt="Fiordos noruegos rodeados de montañas"
+                        src="https://www.civitatis.com/blog/wp-content/uploads/2020/12/que-ver-fiordos-noruegos-1536x1024.jpg">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Fiordos Noruegos</h5>
+                        <p class="card-text">Navega entre majestuosas entradas de mar rodeadas de acantilados verticales y cascadas que
+                            caen desde alturas de vértigo.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="naturaleza">
+                    <img class="card-img" alt="Safari en el Parque Nacional Serengeti"
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/4d/e4/8f/serengeti-national-park.jpg?w=600&h=400&s=1">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Serengeti, Tanzania</h5>
+                        <p class="card-text">Sé testigo de la gran migración y la vida salvaje en estado puro en las llanuras africanas,
+                            hogar de los "cinco grandes".</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="naturaleza">
+                    <img class="card-img" alt="Montañas de Torres del Paine en Chile"
+                        src="https://lastorres.com/content/uploads/header-torres-del-paine-parque-nacional-375x340-1.png">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Torres del Paine, Chile</h5>
+                        <p class="card-text">Uno de los parques nacionales más espectaculares de la Patagonia, famoso por sus macizos de
+                            granito y glaciares azules.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="playa">
+                    <img class="card-img" alt="Resort de lujo sobre el agua en Islas Maldivas"
+                        src="https://scubafinders.com/blog/wp-content/uploads/2025/04/maldivas-turismo.webp">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Islas Maldivas</h5>
+                        <p class="card-text">El paraíso definitivo de arenas blancas y aguas cristalinas, ideal para el buceo y el relax
+                            total en bungalows sobre el océano Índico.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
+                <div class="card text-bg-dark border-0" data-category="playa">
+                    <img class="card-img" alt="Playa y acantilados en Uluwatu, Bali"
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ee/bb/7f/amazing.jpg?w=600&h=400&s=1">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Bali, Indonesia</h5>
+                        <p class="card-text">Mucho más que playa: una mezcla única de templos sagrados a la orilla del mar, surf de clase
+                            mundial y selvas tropicales.</p>
+                    </div>
+                </div>
+            </article>
+
         </section>
     </section>
-    <section class="dest-pricing">
-        <h2 class="dest-pricing__title">Tabla de Precios</h2>
+    <section class="mt-5">
+        <h2 class="text-center h1 font-bold mb-4">Tabla de Precios</h2>
 
-        <div class="dest-pricing__table-container">
-            <table class="dest-pricing__table">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered border">
                 <thead>
                 <tr>
                     <th>Destino</th>
@@ -418,6 +464,10 @@
 </footer>
 <script src="js/jquery-4.0.0.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<!-- masorny -->
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<!-- imagesLoaded -->
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
