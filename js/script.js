@@ -209,3 +209,52 @@ $(document).ready(function () {
     });
 
 });
+
+// ----------------
+// Pricing Page
+// ----------------
+
+// Tooltips Bootstrap
+$('[data-bs-toggle="tooltip"]').each(function () {
+    new bootstrap.Tooltip(this, {
+        trigger: 'hover focus',
+        boundary: 'window'
+    });
+});
+
+// Estilos para el ícono ℹ y hover de filas
+$('<style>').text(`
+    .tooltip-trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        margin-left: 6px;
+        font-size: 12px;
+        font-style: normal;
+        color: #fff;
+        background-color: #0d6efd;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+        vertical-align: middle;
+        line-height: 1;
+    }
+    .tooltip-trigger:hover {
+        background-color: #0b5ed7;
+    }
+    tbody tr {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
+    tbody tr:hover {
+        transform: scaleY(1.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.53);
+        position: relative;
+        z-index: 1;
+    }
+    tbody tr:hover td {
+        background-color: rgba(13, 110, 253, 0.06);
+    }
+`).appendTo('head');
