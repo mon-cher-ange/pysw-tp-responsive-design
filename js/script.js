@@ -153,3 +153,59 @@ $(document).ready(function () {
     });
 
 });
+
+// ------------------
+// Destinations Page
+// ------------------
+$(document).ready(function () {
+
+    // Inyectar estilos del overlay hover
+    $('<style>').text(`
+        .card { overflow: hidden; }
+        .card img.card-img { transition: transform 0.25s ease; }
+        .card:hover img.card-img { transform: scale(1.05); }
+        .card .card-img-overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.68);
+            transform: translateY(100%);
+            transition: transform 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover .card-img-overlay { transform: translateY(0); }
+        .card-title { font-weight: bold; }
+    `).appendTo('head');
+
+    // Masonry
+    var $grid = $('#masonry-grid');
+
+    $grid.imagesLoaded(function () {
+        $grid.masonry({
+            columnWidth: '.grid-sizer',
+            itemSelector: 'article',
+            percentPosition: true,
+            gutter: 0,
+            horizontalOrder: false,
+        });
+    });
+
+    // Filtro de categorías
+    $('.filter-btn').on('click', function () {
+        var filter = $(this).data('filter');
+
+        if (filter === 'all') {
+            $grid.find('article').show();
+        } else {
+            $grid.find('article').each(function () {
+                var category = $(this).find('[data-category]').data('category');
+                $(this).toggle(category === filter);
+            });
+        }
+
+        $grid.imagesLoaded(function () {
+            $grid.masonry('layout');
+        });
+    });
+
+});
