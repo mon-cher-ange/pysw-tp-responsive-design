@@ -20,6 +20,7 @@ $(function () {
     initFlipCardAnimation();
     initDestinationsPage();
     initPricingPage();
+    initContactFormPage();
 
     // Events
     $filterButton.on("click",
@@ -221,6 +222,56 @@ $(function () {
                 trigger: 'hover focus',
                 boundary: 'window'
             });
+        });
+    }
+
+    function initContactFormPage() {
+        $('#contact-form input, #contact-form textarea').on('input', function () {
+            if (this.checkValidity()) {
+                $(this).attr('aria-invalid', 'false');
+                $(this).removeClass('is-invalid').addClass('is-valid');
+            } else {
+                $(this).attr('aria-invalid', 'true');
+                $(this).removeClass('is-valid').addClass('is-invalid');
+            }
+        });
+
+        // Send form.
+        $('#contact-form').on('submit', function (e) {
+            e.preventDefault();
+
+            let form = this;
+
+            if (!form.checkValidity()) {
+                $(form).addClass('was-validated');
+                return;
+            }
+
+            // Show spinner.
+            $('#contact-loading').removeClass('d-none');
+
+            // Disable button.
+            $('#contact-form button').prop('disabled', true).text('Enviando...');
+
+            // Fake sent.
+            setTimeout(function () {
+                // Hide spinner.
+                $('#contact-loading').addClass('d-none');
+
+                // Show modal.
+                let modal = new bootstrap.Modal(document.getElementById('contactModal'));
+                modal.show();
+
+                // Reset form fields.
+                form.reset();
+                $('.is-valid').removeClass('is-valid');
+                $(form).removeClass('was-validated');
+
+                // Restore button.
+                $('#contact-form button').prop('disabled', false).text('Enviar');
+
+            }, 2000);
+            console.log("Formulario válido. Listo para enviar.");
         });
     }
 });

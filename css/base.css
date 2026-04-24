@@ -158,6 +158,23 @@
     color: #ffc107;
 }
 /* Page 4: Contact */
+.modal.fade .modal-dialog {
+    transform: translateY(-20px);
+    transition: transform .3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+}
+
+.invalid-feedback {
+    animation: fadeIn .3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* Page 5: Prices */
 .tooltip-trigger {
