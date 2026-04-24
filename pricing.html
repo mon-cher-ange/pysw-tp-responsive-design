@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Precios</title>
     <link href="css/bootstrap-icons.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
 </head>
-<body>
-<nav id="main-navbar" class="navbar navbar-expand-lg bg-light navbar-light shadow-sm py-3">
+<body id="page-pricing">
+<nav class="navbar navbar-expand-lg bg-body text-body shadow-sm py-3 sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
             <i class="bi bi-balloon-heart-fill fs-3"></i>
@@ -18,47 +19,47 @@
             <i class="bi bi-list fs-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-3">
                 <li class="nav-item">
                     <a class="nav-link position-relative nav-underline" href="index.html">
                         <i class="bi bi-house-door"></i> Inicio
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link position-relative nav-underline" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-compass"></i> Explorar
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                     <ul class="dropdown-menu shadow-sm">
-                        <li><a class="dropdown-item position-relative nav-underline" href="destinations.html"><i class="bi bi-geo-alt"></i> Destinos<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="agencies.html"><i class="bi bi-building"></i> Agencias<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="pricing.html"><i class="bi bi-cash-stack"></i> Precios<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="travel-blog.html"><i class="bi bi-journal-text"></i> Blog<span class="underline"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="destinations.html"><i class="bi bi-geo-alt"></i> Destinos<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="agencies.html"><i class="bi bi-building"></i> Agencias<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="pricing.html"><i class="bi bi-cash-stack"></i> Precios<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="travel-blog.html"><i class="bi bi-journal-text"></i> Blog<span class="underline position-absolute start-0 bottom-0"></span></a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link position-relative nav-underline" href="contact-form.html">
                         <i class="bi bi-envelope"></i> Contacto
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <button id="theme-toggle" class="btn btn-outline-secondary ms-lg-3">
-                        <i class="bi bi-moon"></i>
+                    <button id="theme-toggle" class="btn btn-dark ms-lg-3">
+                        <i class="bi bi-moon-fill" style="color: #ffc107"></i>
                     </button>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<main class="container">
+<main class="container mt-5">
     <section aria-labelledby="titulo-precios" class="pricing">
-        <h2 class="pricing__title h1 font-bold my-4">Comparador de Destinos</h2>
-
+        <h2 class="pricing__title text-center fw-bold h1 mb-4">Comparador de Destinos</h2>
        <div aria-label="Tabla comparativa de destinos" class="table-responsive" role="region">
-            <table aria-describedby="descripcion-tabla" class="table table-bordered border table-hover">
-                <thead class="table-dark">
+            <table aria-describedby="descripcion-tabla" class="table table-hover caption-top">
+                <caption class="text-center fst-italic">Compará destinos y encuentrá la mejor opción para tu viaje</caption>
+                <thead>
                 <tr>
                     <th>Destino</th>
                     <th>Precio</th>
@@ -66,15 +67,19 @@
                     <th>Duración</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                 <tr>
                     <td data-label="Destino">Purmamarca, Jujuy</td>
                     <td data-label="Precio">$185.000</td>
                     <td data-label="Incluye">
-                        Paseo
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Incluye visita al Cerro de Siete Colores y guía local.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Paseo
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Incluye visita al Cerro de Siete Colores y guía local.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">2 días</td>
                 </tr>
@@ -82,10 +87,14 @@
                     <td data-label="Destino">Tilcara, Jujuy</td>
                     <td data-label="Precio">$160.000</td>
                     <td data-label="Incluye">
-                        Arqueología
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Acceso al Pucará y recorrido por el pueblo histórico.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Arqueología
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Acceso al Pucará y recorrido por el pueblo histórico.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">2 días</td>
                 </tr>
@@ -93,10 +102,14 @@
                     <td data-label="Destino">Humahuaca, Jujuy</td>
                     <td data-label="Precio">$120.000</td>
                     <td data-label="Incluye">
-                        Excursión
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Visita al Monumento a la Independencia y centro histórico.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Excursión
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Visita al Monumento a la Independencia y centro histórico.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">1 día</td>
                 </tr>
@@ -104,10 +117,14 @@
                     <td data-label="Destino">Machu Picchu, Perú</td>
                     <td data-label="Precio">$1.950.000</td>
                     <td data-label="Incluye">
-                        Acceso
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Incluye acceso ilimitado a ruinas y guía turístico.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Acceso
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Incluye acceso ilimitado a ruinas y guía turístico.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">5 días</td>
                 </tr>
@@ -115,10 +132,14 @@
                     <td data-label="Destino">Atenas, Grecia</td>
                     <td data-label="Precio">$3.800.000</td>
                     <td data-label="Incluye">
-                        Cultura
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Entradas a la Acrópolis y museos arqueológicos.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Cultura
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Entradas a la Acrópolis y museos arqueológicos.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">4 días</td>
                 </tr>
@@ -126,10 +147,14 @@
                     <td data-label="Destino">Salinas Grandes, Jujuy</td>
                     <td data-label="Precio">$95.000</td>
                     <td data-label="Incluye">
-                        Paisaje
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Traslado y guía para fotos en los piletones de sal.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Paisaje
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Traslado y guía para fotos en los piletones de sal.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">1 día</td>
                 </tr>
@@ -137,10 +162,14 @@
                     <td data-label="Destino">Cataratas del Iguazú</td>
                     <td data-label="Precio">$320.000</td>
                     <td data-label="Incluye">
-                        Naturaleza
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Entradas al parque nacional y paseo en lancha.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Naturaleza
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Entradas al parque nacional y paseo en lancha.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">3 días</td>
                 </tr>
@@ -148,10 +177,14 @@
                     <td data-label="Destino">Islandia</td>
                     <td data-label="Precio">$5.200.000</td>
                     <td data-label="Incluye">
-                        Expedición
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Tour de Auroras Boreales y cuevas de hielo.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Expedición
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Tour de Auroras Boreales y cuevas de hielo.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">7 días</td>
                 </tr>
@@ -159,10 +192,14 @@
                     <td data-label="Destino">Serengeti, Tanzania</td>
                     <td data-label="Precio">$6.500.000</td>
                     <td data-label="Incluye">
-                        Safari
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Safari completo con alojamiento en campamento de lujo.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Safari
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Safari completo con alojamiento en campamento de lujo.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">5 días</td>
                 </tr>
@@ -170,10 +207,14 @@
                     <td data-label="Destino">Islas Maldivas</td>
                     <td data-label="Precio">$6.800.000</td>
                     <td data-label="Incluye">
-                        Relax
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Estadía en bungalow sobre el agua y equipo de snorkel.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Relax
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Estadía en bungalow sobre el agua y equipo de snorkel.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">8 días</td>
                 </tr>
@@ -181,10 +222,14 @@
                     <td data-label="Destino">Tulum, México</td>
                     <td data-label="Precio">$2.600.000</td>
                     <td data-label="Incluye">
-                        Mixto
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Acceso a ruinas mayas frente al mar y cenotes.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Mixto
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Acceso a ruinas mayas frente al mar y cenotes.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">7 días</td>
                 </tr>
@@ -192,10 +237,14 @@
                     <td data-label="Destino">Kioto, Japón</td>
                     <td data-label="Precio">$4.500.000</td>
                     <td data-label="Incluye">
-                        Espiritualidad
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Paseo por santuarios toriis y jardines zen.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Espiritualidad
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Paseo por santuarios toriis y jardines zen.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">6 días</td>
                 </tr>
@@ -203,10 +252,14 @@
                     <td data-label="Destino">Petra, Jordania</td>
                     <td data-label="Precio">$4.200.000</td>
                     <td data-label="Incluye">
-                        Aventura
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Entrada a la Ciudad Rosa, show nocturno y paseo en camello.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Aventura
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Entrada a la Ciudad Rosa, show nocturno y paseo en camello.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">4 días</td>
                 </tr>
@@ -214,10 +267,14 @@
                     <td data-label="Destino">Bali, Indonesia</td>
                     <td data-label="Precio">$3.900.000</td>
                     <td data-label="Incluye">
-                        Descubrimiento
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Recorrido por templos sagrados y clases de surf.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Descubrimiento
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Recorrido por templos sagrados y clases de surf.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">9 días</td>
                 </tr>
@@ -225,10 +282,14 @@
                     <td data-label="Destino">Fiordos Noruegos</td>
                     <td data-label="Precio">$4.800.000</td>
                     <td data-label="Incluye">
-                        Crucero
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Navegación por Geirangerfjord y tren panorámico Flåmsbana.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Crucero
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Navegación por Geirangerfjord y tren panorámico Flåmsbana.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">7 días</td>
                 </tr>
@@ -236,10 +297,14 @@
                     <td data-label="Destino">Torres del Paine, Chile</td>
                     <td data-label="Precio">$1.400.000</td>
                     <td data-label="Incluye">
-                        Trekking
-                        <span class="tooltip-trigger" tabindex="0"
-                            data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Guía de montaña, equipo de camping y traslado a glaciares.">ℹ</span>
+                        <span class="d-inline-flex align-items-center gap-3">
+                            Trekking
+                            <span class="tooltip-trigger" tabindex="0"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Guía de montaña, equipo de camping y traslado a glaciares.">
+                                <i class="bi bi-exclamation-circle-fill"></i>
+                            </span>
+                        </span>
                     </td>
                     <td data-label="Duración">6 días</td>
                 </tr>
@@ -248,12 +313,12 @@
         </div>
     </section>
 </main>
-<footer class="bg-dark text-light pt-5 mt-5">
+<footer class="container-fluid text-body bg-body-tertiary pt-5 mt-5">
     <div class="container">
         <div class="row g-4 align-items-start justify-content-center text-center">
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Newsletter</h5>
-                <form>
+                <form action="#" method="post">
                     <input type="email" class="form-control mb-2" placeholder="Tu correo electrónico" required>
                     <button class="btn btn-primary w-100">Enviar</button>
                 </form>
@@ -261,19 +326,19 @@
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Redes</h5>
                 <div class="d-flex justify-content-center gap-3 fs-4">
-                    <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-twitter-x"></i></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Ubicación</h5>
                 <div class="ratio ratio-4x3 rounded overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." style="border:0;" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.5108038706435!2d-65.2929982!3d-24.1888835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5bca584281%3A0xb1d519d50cac526d!2sFaculty%20of%20Engineering%20National%20University%20Jujuy!5e0!3m2!1sen!2sar!4v1776990390729!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
-        <div class="text-center py-3 mt-4 border-top border-secondary">
+        <div class="text-center py-3 mt-4 border-top">
             <small>&copy; 2026 Turismo del Norte</small>
         </div>
     </div>
@@ -282,5 +347,4 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>
-
 </html>
