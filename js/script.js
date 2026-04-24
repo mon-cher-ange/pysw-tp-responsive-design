@@ -18,9 +18,12 @@ $(function () {
     initCounters();
     initRatingSystemAnimation();
     initFlipCardAnimation();
-    initDestinationsPage();
+    initDestinationsContent();
     initPricingPage();
-    initContactFormPage();
+    initContactForm();
+    initBlogFilters();
+    initRevealComments();
+    initArticleReveal();
 
     // Events
     $filterButton.on("click",
@@ -181,7 +184,7 @@ $(function () {
                 })
     }
 
-    function initDestinationsPage() {
+    function initDestinationsContent() {
         const $grid = $("#masonry-grid");
 
         if (!$grid.length) return;
@@ -225,7 +228,7 @@ $(function () {
         });
     }
 
-    function initContactFormPage() {
+    function initContactForm() {
         $('#contact-form input, #contact-form textarea').on('input', function () {
             if (this.checkValidity()) {
                 $(this).attr('aria-invalid', 'false');
@@ -273,5 +276,43 @@ $(function () {
             }, 2000);
             console.log("Formulario válido. Listo para enviar.");
         });
+    }
+
+    function initBlogFilters() {
+        $("#blog-filters button").on("click", function () {
+
+            $("#blog-filters button").removeClass("active");
+            $(this).addClass("active");
+
+            const filter = $(this).data("filter");
+
+            if (filter === "all") {
+                $(".article-item").fadeIn();
+            } else {
+                $(".article-item").hide();
+                $(`.article-item[data-category="${filter}"]`).fadeIn();
+            }
+        });
+    }
+
+    function initRevealComments() {
+        $(".comment-reveal").each(function (i) {
+            setTimeout(() => {
+                $(this).addClass("show-comment");
+            }, i * 300);
+        });
+    }
+
+    /* Animations */
+    function initArticleReveal() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show-article");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll(".article-reveal").forEach(el => observer.observe(el));
     }
 });
