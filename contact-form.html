@@ -54,48 +54,98 @@
     </div>
 </nav>
 <main>
-    <section aria-labelledby="titulo-contacto" class="contact">
-        <h2 class="contact__title">Contacto</h2>
-        <div aria-live="polite" class="contact-loading" id="contact-loading" role="status">
-            <div class="contact-loading__spinner"></div>
+    <section aria-labelledby="titulo-contacto" class="p-5">
+        <div class="text-center mb-5">
+            <h2 class="text-center mb-4 fw-bold">Contacto</h2>
+            <p class="text-center text-body-secondary">Tu próxima aventura comienza con un mensaje. Cuéntanos a dónde sueñas ir y nosotros nos encargamos del resto.</p>
         </div>
-        <div aria-labelledby="modal-title" aria-modal="true" class="contact-modal" id="contact-modal" role="dialog">
-            <div class="contact-modal__content">
-                <h3 class="contact-modal__title">¡Mensaje enviado!</h3>
-                <p class="contact-modal__text">Gracias por contactarte con nosotros. Te responderemos pronto.</p>
-                <a aria-label="Cerrar mensaje" class="contact-modal__close" href="#">Cerrar</a>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div id="contact-loading" class="text-center mb-3 d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Enviando...</span>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-lg p-2 p-md-4 rounded-4 bg-body">
+                    <div class="card-body">
+                        <form id="contact-form" class="needs-validation" novalidate>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" for="name">Nombre completo</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+                                    <input class="form-control" id="name" placeholder="Ej. Juan Pérez" required type="text">
+                                    <div class="invalid-feedback">Por favor, dinos tu nombre.</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-4">
+                                    <label class="form-label fw-semibold" for="email">Email</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-envelope"></i>
+                                        </span>
+                                        <input class="form-control" id="email" placeholder="nombre@ejemplo.com" required type="email">
+                                        <div class="invalid-feedback">Ingresa un email válido</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label class="form-label fw-semibold" for="phone">Teléfono</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-whatsapp"></i>
+                                        </span>
+                                        <input class="form-control" id="phone" placeholder="+123 456 789" pattern="[0-9]{7,15}" required type="tel">
+                                        <div class="invalid-feedback">Ingresa un teléfono válido</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" for="message">¿Qué viaje tienes en mente?</label>
+                                <div class="input-group has-validation">
+                                    <textarea class="form-control" rows="4" id="message" placeholder="Cuéntanos sobre el destino, fechas o presupuesto..." required></textarea>
+                                    <div class="invalid-feedback">El mensaje no puede estar vacío</div>
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm fw-bold">
+                                    Enviar mensaje <i class="bi bi-send-fill ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content shadow-lg border-0 rounded-4">
+                                    <div class="modal-header border-0">
+                                        <h5 class="modal-title d-flex align-items-center gap-2" id="contactModalLabel">
+                                            <i class="bi bi-check-circle-fill text-success fs-4"></i>
+                                            ¡Mensaje enviado!
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Cerrar"></button>
+                                    </div>
+                                    <div class="modal-body text-center py-4">
+                                        <p class="mb-0 fs-5">
+                                            Gracias por contactarte con nosotros. Te responderemos pronto.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer border-0 justify-content-center pb-4">
+                                        <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">
+                                            Cerrar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <form aria-label="Formulario de contacto" class="contact-form" novalidate>
-            <div class="contact-form__group">
-                <label class="contact-form__label" for="name">Nombre</label>
-                <input class="contact-form__input" id="name" required type="text">
-                <span class="contact-form__error">Ingresa un nombre válido</span>
-            </div>
-            <div class="contact-form__group">
-                <label class="contact-form__label" for="email">Email</label>
-                <input class="contact-form__input" id="email" required type="email">
-                <span class="contact-form__error">Ingresa un email válido</span>
-            </div>
-            <div class="contact-form__group">
-                <label class="contact-form__label" for="phone">Teléfono</label>
-                <input aria-describedby="error-phone" aria-required="true" class="contact-form__input" id="phone" pattern="[0-9]{7,15}"
-                       required type="tel">
-                <span class="contact-form__error">Ingresa un teléfono válido</span>
-            </div>
-            <div class="contact-form__group contact-form__group--full">
-                <label class="contact-form__label" for="message">Mensaje</label>
-                <textarea aria-describedby="error-message" aria-required="true" class="contact-form__input contact-form__textarea"
-                          id="message" required></textarea>
-                <span class="contact-form__error">El mensaje no puede estar vacío</span>
-            </div>
-            <a aria-label="Enviar formulario" class="contact-form__button" href="#contact-loading" role="button">
-                <span class="contact-form__button-text">Enviar</span>
-            </a>
-        </form>
     </section>
 </main>
-<footer class="container-fluid text-body bg-body-tertiary pt-5 mt-5">
+<footer class="container-fluid text-body bg-body-tertiary pt-5">
     <div class="container">
         <div class="row g-4 align-items-start justify-content-center text-center">
             <div class="col-md-4">
