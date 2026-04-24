@@ -23,25 +23,25 @@
                 <li class="nav-item">
                     <a class="nav-link position-relative nav-underline" href="index.html">
                         <i class="bi bi-house-door"></i> Inicio
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link position-relative nav-underline" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-compass"></i> Explorar
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                     <ul class="dropdown-menu shadow-sm">
-                        <li><a class="dropdown-item position-relative nav-underline" href="destinations.html"><i class="bi bi-geo-alt"></i> Destinos<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="agencies.html"><i class="bi bi-building"></i> Agencias<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="pricing.html"><i class="bi bi-cash-stack"></i> Precios<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="travel-blog.html"><i class="bi bi-journal-text"></i> Blog<span class="underline"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="destinations.html"><i class="bi bi-geo-alt"></i> Destinos<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="agencies.html"><i class="bi bi-building"></i> Agencias<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="pricing.html"><i class="bi bi-cash-stack"></i> Precios<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="travel-blog.html"><i class="bi bi-journal-text"></i> Blog<span class="underline position-absolute start-0 bottom-0"></span></a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link position-relative nav-underline" href="contact-form.html">
                         <i class="bi bi-envelope"></i> Contacto
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -60,9 +60,9 @@
                style="object-fit: cover; height: 60vh;">
             <source src="assets/video/hero_placeholder.mp4" type="video/mp4">
         </video>
-        <div id="hero-overlay" class="bg-body text-body bg-opacity-50 rounded-0 py-3 w-100 position-absolute top-50 start-50 translate-middle text-center">
+        <div class="bg-body text-body bg-opacity-50 rounded-0 py-3 w-100 position-absolute top-50 start-50 translate-middle text-center">
             <h1 class="display-1 fw-bold" id="hero-title">Descubre la magia del Norte</h1>
-            <p class="fs-3">Experiencias inolvidables en cada rincón</p>
+            <p class="fs-3" id="hero-subtitle">Experiencias inolvidables en cada rincón</p>
         </div>
     </section>
     <section aria-labelledby="titulo-destinos" class="container py-5">
@@ -129,17 +129,17 @@
                 <div class="carousel-item active text-center">
                     <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="220" alt="Testimonio 1">
                     <blockquote class="blockquote">"Un viaje increíble, la organización fue perfecta."</blockquote>
-                    <p class="fst-italic fw-bold text">– Veronica Pérez</p>
+                    <p class="fst-italic fw-bold">– Veronica Pérez</p>
                 </div>
                 <div class="carousel-item text-center">
                     <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="220" alt="Testimonio 2">
                     <blockquote class="blockquote">"La atención de las agencias locales superó mis expectativas."</blockquote>
-                    <p class="fst-italic fw-bold text">– Carolina Gómez</p>
+                    <p class="fst-italic fw-bold">– Carolina Gómez</p>
                 </div>
                 <div class="carousel-item text-center">
                     <img src="assets/img/testimonial_placeholder.jpg" class="rounded-circle mb-3" width="220" alt="Testimonio 3">
                     <blockquote class="blockquote">"Los paisajes de Jujuy son únicos en el mundo."</blockquote>
-                    <p class="fst-italic fw-bold text">– María García</p>
+                    <p class="fst-italic fw-bold">– María García</p>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
@@ -151,6 +151,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+    <!-- TODO: Add carousel indicators -->
     </section>
 </main>
 <footer class="container-fluid text-body bg-body-tertiary pt-5 mt-5">
@@ -158,7 +159,7 @@
         <div class="row g-4 align-items-start justify-content-center text-center">
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Newsletter</h5>
-                <form>
+                <form action="#" method="post">
                     <input type="email" class="form-control mb-2" placeholder="Tu correo electrónico" required>
                     <button class="btn btn-primary w-100">Enviar</button>
                 </form>
@@ -166,15 +167,15 @@
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Redes</h5>
                 <div class="d-flex justify-content-center gap-3 fs-4">
-                    <a href="#" class="text-body"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-body"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-body"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-twitter-x"></i></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Ubicación</h5>
                 <div class="ratio ratio-4x3 rounded overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." style="border:0;" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.5108038706435!2d-65.2929982!3d-24.1888835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5bca584281%3A0xb1d519d50cac526d!2sFaculty%20of%20Engineering%20National%20University%20Jujuy!5e0!3m2!1sen!2sar!4v1776990390729!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -187,5 +188,4 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 </body>
-
 </html>

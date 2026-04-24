@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Destinos</title>
     <link href="css/bootstrap-icons.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
 </head>
-<body>
-<nav id="main-navbar" class="navbar navbar-expand-lg bg-light navbar-light shadow-sm py-3">
+<body id="page-destinations">
+<nav class="navbar navbar-expand-lg bg-body text-body shadow-sm py-3 sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
             <i class="bi bi-balloon-heart-fill fs-3"></i>
@@ -18,34 +19,34 @@
             <i class="bi bi-list fs-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-3">
                 <li class="nav-item">
                     <a class="nav-link position-relative nav-underline" href="index.html">
                         <i class="bi bi-house-door"></i> Inicio
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link position-relative nav-underline" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-compass"></i> Explorar
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                     <ul class="dropdown-menu shadow-sm">
-                        <li><a class="dropdown-item position-relative nav-underline" href="destinations.html"><i class="bi bi-geo-alt"></i> Destinos<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="agencies.html"><i class="bi bi-building"></i> Agencias<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="pricing.html"><i class="bi bi-cash-stack"></i> Precios<span class="underline"></span></a></li>
-                        <li><a class="dropdown-item position-relative nav-underline" href="travel-blog.html"><i class="bi bi-journal-text"></i> Blog<span class="underline"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="destinations.html"><i class="bi bi-geo-alt"></i> Destinos<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="agencies.html"><i class="bi bi-building"></i> Agencias<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="pricing.html"><i class="bi bi-cash-stack"></i> Precios<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="travel-blog.html"><i class="bi bi-journal-text"></i> Blog<span class="underline position-absolute start-0 bottom-0"></span></a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link position-relative nav-underline" href="contact-form.html">
                         <i class="bi bi-envelope"></i> Contacto
-                        <span class="underline"></span>
+                        <span class="underline position-absolute start-0 bottom-0"></span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <button id="theme-toggle" class="btn btn-outline-secondary ms-lg-3">
-                        <i class="bi bi-moon"></i>
+                    <button id="theme-toggle" class="btn btn-dark ms-lg-3">
+                        <i class="bi bi-moon-fill" style="color: #ffc107"></i>
                     </button>
                 </li>
             </ul>
@@ -54,20 +55,14 @@
 </nav>
 <main class="container">
     <section class="filters">
-
-        <!-- botones -->
         <div class="filtros d-flex justify-content-center gap-3 my-4">
-            <button class="filter-btn btn btn btn-dark" data-filter="all">Todos</button>
-            <button class="filter-btn btn btn btn-dark" data-filter="cultural">Cultural</button>
-            <button class="filter-btn btn btn btn-dark" data-filter="naturaleza">Naturaleza</button>
-            <button class="filter-btn btn btn btn-dark" data-filter="playa">Playa</button>
+            <button class="filter-btn shadow-sm btn btn-outline-dark rounded-top-pill rounded-end-pill p-3" data-filter="all">Todos</button>
+            <button class="filter-btn shadow-sm btn btn-outline-dark rounded-top-pill rounded-end-pill p-3" data-filter="cultural">Cultural</button>
+            <button class="filter-btn shadow-sm btn btn-outline-dark rounded-top-pill rounded-end-pill p-3" data-filter="naturaleza">Naturaleza</button>
+            <button class="filter-btn shadow-sm btn btn-outline-dark rounded-top-pill rounded-end-pill p-3" data-filter="playa">Playa</button>
         </div>
-
-        <!-- galeria -->
         <section id="masonry-grid" class="row">
-
             <div class="col-12 col-md-6 col-lg-4 grid-sizer"></div>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="Cerro de los Siete Colores en Purmamarca, Jujuy"
@@ -79,7 +74,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="naturaleza">
                     <img class="card-img" alt="Inmensidad blanca de las Salinas Grandes en Jujuy"
@@ -91,7 +85,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="Pucará, Jujuy"
@@ -102,7 +95,6 @@
                     </div>
                 </div>
             </article>
-            
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="Pucará de Tilcara, sitio arqueológico prehispánico"
@@ -114,7 +106,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="playa">
                     <img class="card-img" alt="Ruinas mayas frente al mar Caribe en Tulum"
@@ -126,7 +117,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="playa">
                     <img class="card-img" alt="Playa Anse Source d'Argent en Seychelles"
@@ -138,7 +128,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="Serranías del Hornocal, el cerro de 14 colores"
@@ -150,7 +139,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="Ruinas de Machu Picchu en Perú"
@@ -162,7 +150,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="El Partenón en la Acrópolis de Atenas"
@@ -174,7 +161,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="Santuario Fushimi Inari en Kioto"
@@ -186,7 +172,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="playa">
                     <img class="card-img" alt="Laguna de aguas cristalinas en Bora Bora"
@@ -198,7 +183,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="naturaleza">
                     <img class="card-img" alt="Cataratas del Iguazú desde el lado argentino"
@@ -210,7 +194,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="cultural">
                     <img class="card-img" alt="La Alhambra de Granada, España"
@@ -222,7 +205,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="naturaleza">
                     <img class="card-img" alt="Auroras boreales sobre una cascada en Islandia"
@@ -234,7 +216,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="naturaleza">
                     <img class="card-img" alt="Fiordos noruegos rodeados de montañas"
@@ -246,7 +227,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="naturaleza">
                     <img class="card-img" alt="Safari en el Parque Nacional Serengeti"
@@ -258,7 +238,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="naturaleza">
                     <img class="card-img" alt="Montañas de Torres del Paine en Chile"
@@ -270,7 +249,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="playa">
                     <img class="card-img" alt="Resort de lujo sobre el agua en Islas Maldivas"
@@ -282,7 +260,6 @@
                     </div>
                 </div>
             </article>
-
             <article class="col-12 col-md-6 col-lg-4 bg-transparent p-2">
                 <div class="card text-bg-dark border-0" data-category="playa">
                     <img class="card-img" alt="Playa y acantilados en Uluwatu, Bali"
@@ -294,12 +271,10 @@
                     </div>
                 </div>
             </article>
-
         </section>
     </section>
     <section class="mt-5">
         <h2 class="text-center h1 font-bold mb-4">Tabla de Precios</h2>
-
         <div class="table-responsive">
             <table class="table table-striped table-bordered border">
                 <thead>
@@ -432,12 +407,12 @@
         </div>
     </section>
 </main>
-<footer class="bg-dark text-light pt-5 mt-5">
+<footer class="container-fluid text-body bg-body-tertiary pt-5 mt-5">
     <div class="container">
         <div class="row g-4 align-items-start justify-content-center text-center">
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Newsletter</h5>
-                <form>
+                <form action="#" method="post">
                     <input type="email" class="form-control mb-2" placeholder="Tu correo electrónico" required>
                     <button class="btn btn-primary w-100">Enviar</button>
                 </form>
@@ -445,19 +420,19 @@
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Redes</h5>
                 <div class="d-flex justify-content-center gap-3 fs-4">
-                    <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-body" aria-disabled="true"><i class="bi bi-twitter-x"></i></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <h5 class="fw-bold mb-3">Ubicación</h5>
                 <div class="ratio ratio-4x3 rounded overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18..." style="border:0;" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.5108038706435!2d-65.2929982!3d-24.1888835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5bca584281%3A0xb1d519d50cac526d!2sFaculty%20of%20Engineering%20National%20University%20Jujuy!5e0!3m2!1sen!2sar!4v1776990390729!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
-        <div class="text-center py-3 mt-4 border-top border-secondary">
+        <div class="text-center py-3 mt-4 border-top">
             <small>&copy; 2026 Turismo del Norte</small>
         </div>
     </div>
