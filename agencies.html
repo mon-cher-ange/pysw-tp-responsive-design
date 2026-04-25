@@ -53,7 +53,7 @@
         </div>
     </div>
 </nav>
-<div class="container py-5">
+<main class="container py-5">
     <div class="row g-4 justify-content-start">
         <div class="col-12 col-md-6 col-lg-6 col-xl-4">
             <article class="card h-100 shadow overflow-hidden">
@@ -286,7 +286,7 @@
             </article>
         </div>
     </div>
-</div>
+</main>
 <footer class="container-fluid text-body bg-body-tertiary pt-5 border-top">
     <div class="container">
         <div class="row g-4 align-items-start justify-content-center text-start">
@@ -308,10 +308,11 @@
                         Aprende a identificar correos fraudulentos antes de caer en una estafa.
                     </p>
                     <button type="button"
-                            class="btn btn-warning"
+                            class="btn btn-warning d-flex align-items-center gap-2 common-button"
                             data-bs-toggle="modal"
                             data-bs-target="#phishingModal">
                         Simulación de phishing
+                        <span class="common-sprite d-inline-block"></span>
                     </button>
                 </section>
                 <div class="modal fade" id="phishingModal" tabindex="-1" aria-labelledby="phishingModalLabel" aria-hidden="true">
@@ -396,9 +397,10 @@
             <div class="col-md-6 col-lg-4 text-md-center">
                 <h5 class="fw-bold mb-3">Redes</h5>
                 <div class="d-flex justify-content-md-center gap-3 fs-3">
-                    <a href="#" class="link-body-emphasis link-opacity-50 link-opacity-100-hover" aria-disabled="true"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="link-body-emphasis link-opacity-50 link-opacity-100-hover" aria-disabled="true"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="link-body-emphasis link-opacity-50 link-opacity-100-hover" aria-disabled="true"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__facebook" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__instagram" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__twitter-x" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__youtube" aria-disabled="true"></a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
@@ -408,8 +410,9 @@
                 </div>
             </div>
         </div>
-        <div class="text-center py-3 mt-4 border-top text-body-secondary">
-            <span class="small">&copy; 2026 Turismo del Norte S.A.</span>
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-2 text-center py-3 mt-4 border-top text-body-secondary">
+            <span class="small">&copy; 2026 Turismo del Norte - Comprometidos con un turismo seguro y responsable.</span>
+            <span class="d-inline-block important-sprite"></span>
         </div>
     </div>
 </footer>
