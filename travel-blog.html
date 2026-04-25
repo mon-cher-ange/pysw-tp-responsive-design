@@ -61,12 +61,12 @@
     <div class="row g-4">
         <aside class="col-12 col-md-3">
             <div class="p-3 border rounded-3 bg-body shadow-sm">
-                <h3 class="h5 fw-bold text-body-emphasis mb-3">Categorías</h3>
-                <div class="list-group" id="blog-filters">
-                    <button class="list-group-item list-group-item-action active" data-filter="all">Todos</button>
-                    <button class="list-group-item list-group-item-action" data-filter="cultural">Cultural</button>
-                    <button class="list-group-item list-group-item-action" data-filter="natural">Naturaleza</button>
-                    <button class="list-group-item list-group-item-action" data-filter="playa">Playa</button>
+                <h3 class="h6 text-uppercase fw-bold text-secondary mb-3">Categorías</h3>
+                <div class="nav flex-column nav-pills" id="blog-filters">
+                    <button class="nav-link active" data-filter="all"><i class="bi bi-grid-fill me-2"></i> Todos</button>
+                    <button class="nav-link" data-filter="cultural"><i class="bi bi-grid-fill me-2"></i> Cultural</button>
+                    <button class="nav-link" data-filter="natural"><i class="bi bi-grid-fill me-2"></i> Naturaleza</button>
+                    <button class="nav-link" data-filter="playa"><i class="bi bi-grid-fill me-2"></i> Playa</button>
                 </div>
             </div>
         </aside>
@@ -170,32 +170,50 @@
         <h2 class="fw-bold mb-4">Comentarios de Lectores</h2>
         <div id="comments-list" class="vstack gap-4">
             <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
-                <strong>María García</strong>
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__01"></span>
+                    <strong>María García</strong>
+                </div>
                 <p class="mb-1">¡Excelente artículo! Me inspiró a planificar mi próximo viaje a los Andes.</p>
                 <small class="text-muted">Hace 2 días</small>
             </div>
-            <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
-                <strong>Juan Pérez</strong>
+            <div class="position-relative p-3 border rounded-3 shadow-sm bg-body comment-reveal">
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__02"></span>
+                    <strong>Juan Pérez</strong>
+                </div>
                 <p class="mb-1">Las fotos son increíbles. ¿Dónde puedo encontrar más información sobre agencias locales?</p>
                 <small class="text-muted">Hace 1 día</small>
             </div>
             <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
-                <strong>Valeria Núñez</strong>
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__03"></span>
+                    <strong>Valeria Núñez</strong>
+                </div>
                 <p class="mb-1">Leí el artículo sobre Machu Picchu y me encantó cómo explicaron la historia. Me dieron más ganas de visitar sitios culturales.</p>
                 <small class="text-muted">Hace 6 horas</small>
             </div>
             <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
-                <strong>Esteban Ríos</strong>
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__01"></span>
+                    <strong>Esteban Ríos</strong>
+                </div>
                 <p class="mb-1">Las fotos de Islandia son impresionantes. La sección de naturaleza siempre me deja con ganas de explorar más.</p>
                 <small class="text-muted">Hace 12 horas</small>
             </div>
             <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
-                <strong>Camila Duarte</strong>
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__02"></span>
+                    <strong>Camila Duarte</strong>
+                </div>
                 <p class="mb-1">El artículo sobre las Maldivas fue espectacular. Me encantó la descripción de las playas, ¡parece un sueño!</p>
                 <small class="text-muted">Hace 1 día</small>
             </div>
             <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
-                <strong>Gonzalo Herrera</strong>
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__03"></span>
+                    <strong>Gonzalo Herrera</strong>
+                </div>
                 <p class="mb-1">Muy buena nota sobre Purmamarca. La parte cultural del blog es mi favorita, siempre descubro algo nuevo.</p>
                 <small class="text-muted">Hace 3 días</small>
             </div>
@@ -223,10 +241,11 @@
                         Aprende a identificar correos fraudulentos antes de caer en una estafa.
                     </p>
                     <button type="button"
-                            class="btn btn-warning"
+                            class="btn btn-warning d-flex align-items-center gap-2 common-button"
                             data-bs-toggle="modal"
                             data-bs-target="#phishingModal">
                         Simulación de phishing
+                        <span class="common-sprite d-inline-block"></span>
                     </button>
                 </section>
                 <div class="modal fade" id="phishingModal" tabindex="-1" aria-labelledby="phishingModalLabel" aria-hidden="true">
@@ -311,9 +330,10 @@
             <div class="col-md-6 col-lg-4 text-md-center">
                 <h5 class="fw-bold mb-3">Redes</h5>
                 <div class="d-flex justify-content-md-center gap-3 fs-3">
-                    <a href="#" class="link-body-emphasis link-opacity-50 link-opacity-100-hover" aria-disabled="true"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="link-body-emphasis link-opacity-50 link-opacity-100-hover" aria-disabled="true"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="link-body-emphasis link-opacity-50 link-opacity-100-hover" aria-disabled="true"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__facebook" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__instagram" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__twitter-x" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__youtube" aria-disabled="true"></a>
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
@@ -323,8 +343,9 @@
                 </div>
             </div>
         </div>
-        <div class="text-center py-3 mt-4 border-top text-body-secondary">
-            <span class="small">&copy; 2026 Turismo del Norte S.A.</span>
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-2 text-center py-3 mt-4 border-top text-body-secondary">
+            <span class="small">&copy; 2026 Turismo del Norte - Comprometidos con un turismo seguro y responsable.</span>
+            <span class="d-inline-block important-sprite"></span>
         </div>
     </div>
 </footer>

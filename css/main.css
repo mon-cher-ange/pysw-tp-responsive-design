@@ -235,3 +235,88 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Sprites */
+.social-media-sprite {
+    --sprite-size: 36px;
+    background-image: url("../assets/img/social_media_sprite.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: var(--sprite-size);
+    height: var(--sprite-size);
+    opacity: 0.8;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.social-media-sprite:hover {
+    transform: scale(1.25);
+    opacity: 1;
+}
+
+.social-media-sprite__facebook {
+    background-position: 0 0;
+}
+
+.social-media-sprite__instagram {
+    background-position: -36px 0;
+}
+
+.social-media-sprite__twitter-x {
+    background-position: -72px 0;
+}
+
+.social-media-sprite__youtube {
+    background-position: -108px 0;
+}
+
+.important-sprite {
+    --size: 26px;
+    --frame: 3;
+    width: var(--size);
+    height: var(--size);
+    background-image: url("../assets/img/important_button_sprite.png");
+    background-repeat: no-repeat;
+    animation: play 1s steps(var(--frame)) infinite;
+}
+
+.common-sprite {
+    --size: 36px;
+    --frame: 3;
+    width: var(--size);
+    height: var(--size);
+    background-image: url("../assets/img/common_button_sprite.png");
+    background-repeat: no-repeat;
+    animation: play 1s steps(var(--frame)) infinite;
+    transition: transform .4s ease;
+}
+
+.common-button:hover .common-sprite {
+    transform: rotate(-180deg);
+}
+
+@keyframes play {
+    from { background-position: 0 0; }
+    to { background-position: calc(var(--frame) * var(--size) * -1) 0; }
+}
+
+.comment-face-sprite {
+    background-image: url("../assets/img/comment_face_sprite.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 38px;
+    height: 31px;
+    /*opacity: 0.8;*/
+    /*transition: transform .3s ease, opacity .3s ease;*/
+}
+
+.comment-face-sprite__01 {
+    background-position: 0 0;
+}
+
+.comment-face-sprite__02 {
+    background-position: -38px 0;
+}
+
+.comment-face-sprite__03 {
+    background-position: -76px 0;
+}
