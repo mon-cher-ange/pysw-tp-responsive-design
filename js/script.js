@@ -1,18 +1,57 @@
 // Theme and Preferences.
 $(function () {
-
     // Objects and variables
     const $html = $("html")
     const $filterButton = $(".filter-btn");
+    const $themeToggle = $("#theme-toggle");
+    const $themeToggleIcon = $themeToggle.find("i");
 
     const defaultTheme = "light"
     const savedTheme = localStorage.getItem("theme") || defaultTheme;
 
-    // Initialization
+    // Theme initialization.
     $html.attr("data-bs-theme", savedTheme);
-    // Apply initial state.
-    applyTheme(savedTheme);
 
+    // Set initial icon/button state.
+    if (savedTheme === "dark") {
+        $themeToggleIcon
+            .removeClass("bi-moon-fill")
+            .addClass("bi-sun-fill");
+        $themeToggle
+            .removeClass("btn-outline-secondary")
+            .addClass("btn-outline-light");
+    }
+
+    // Theme toggle trigger event.
+    $themeToggle.on("click", function () {
+        let currentTheme = $html.attr("data-bs-theme");
+        let nextTheme = currentTheme === "light" ? "dark" : "light";
+
+        $html.attr("data-bs-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+
+        // Change toggle-theme icon.
+        if (nextTheme === "dark") {
+            $themeToggleIcon
+                .removeClass("bi-moon-fill")
+                .addClass("bi-sun-fill");
+            $themeToggle
+                .removeClass("btn-outline-secondary")
+                .addClass("btn-outline-light");
+        } else {
+            $themeToggleIcon
+                .removeClass("bi-sun-fill")
+                .addClass("bi-moon-fill");
+            $themeToggle
+                .removeClass("btn-outline-light")
+                .addClass("btn-outline-secondary");
+        }
+
+        applyTheme(nextTheme);
+    });
+
+    // Apply initial states.
+    applyTheme(savedTheme);
     initHeroTypingAnimation();
     initCardAnimation();
     initCounters();
@@ -24,14 +63,14 @@ $(function () {
     initBlogFilters();
     initRevealComments();
     initArticleReveal();
+    initPhishingAnswersVerification();
 
     // Events
     $filterButton.on("click",
         function () {
         $filterButton.removeClass("active");
         $(this).addClass("active");
-    }
-    );
+    });
 
     $filterButton.on("mouseenter", function () {
         $(this).addClass("filter-tilt")
@@ -39,26 +78,8 @@ $(function () {
         $(this).removeClass("filter-tilt");
     })
 
-    // Toggle-theme button action.
-    $("#theme-toggle").on("click", function () {
-        let currentTheme = $html.attr("data-bs-theme");
-        let nextTheme = currentTheme === "light" ? "dark" : "light";
-
-        $html.attr("data-bs-theme", nextTheme);
-        localStorage.setItem("theme", nextTheme);
-
-        // Change toggle-theme icon.
-        $(this)
-            .find("i")
-            .toggleClass("bi-moon-fill bi-sun-fill");
-        $(this).toggleClass("btn-dark btn-light");
-
-        applyTheme(nextTheme);
-    });
-
     // Functions
     function applyTheme(theme) {
-
         // Page 1: Home
         // Carousel arrow icons.
         // TODO: Figure out how those buttons/indicators work (this is a hack).
@@ -303,6 +324,50 @@ $(function () {
         });
     }
 
+    function initPhishingAnswersVerification() {
+        $("#phishing-check").on("click", function () {
+            const selected = $(".phishing-option:checked").map(function () {
+                return $(this).val();
+            }).get();
+
+            const feedback = $("#phishing-feedback");
+            feedback.empty();
+
+            // Correct answers.
+            const answers = ["email", "link", "urgencia"];
+
+            // If user choose "none".
+            if (selected.includes("ninguna")) {
+                feedback
+                    .removeClass()
+                    .addClass("alert alert-danger")
+                    .text("Cuidado: este correo tiene varias señales claras de fraude. Nunca hagas clic ni ingreses datos.");
+                return;
+            }
+
+            // Verify if user checked all the correct answers.
+            const successes = answers.every(v => selected.includes(v));
+            const leftover = selected.filter(v => !answers.includes(v));
+
+            if (successes && leftover.length === 0) {
+                feedback
+                    .removeClass()
+                    .addClass("alert alert-success")
+                    .text("¡Muy bien! Identificaste correctamente las señales de phishing en este correo.");
+            } else if (selected.length === 0) {
+                feedback
+                    .removeClass()
+                    .addClass("alert alert-warning")
+                    .text("Intenta marcar al menos una opción que consideres sospechosa.");
+            } else {
+                feedback
+                    .removeClass()
+                    .addClass("alert alert-warning")
+                    .html("Has identificado algunas señales, pero no todas.<br><small>Pista: revisa el remitente, el enlace y el tono de urgencia.</small>");
+            }
+        });
+    }
+
     /* Animations */
     function initArticleReveal() {
         const observer = new IntersectionObserver(entries => {
@@ -313,6 +378,8 @@ $(function () {
             });
         }, { threshold: 0.2 });
 
-        document.querySelectorAll(".article-reveal").forEach(el => observer.observe(el));
+        document
+            .querySelectorAll(".article-reveal")
+            .forEach(el => observer.observe(el));
     }
 });
