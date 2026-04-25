@@ -82,9 +82,11 @@ $(function () {
     function applyTheme(theme) {
         // Page 1: Home
         // Carousel arrow icons.
-        // TODO: Figure out how those buttons/indicators work (this is a hack).
-        $(".carousel-control-prev-icon, .carousel-control-next-icon")
-            .css("filter", "invert(1)");
+        let $carouselArrowIndicators = $(".carousel-control-prev-icon, .carousel-control-next-icon");
+
+        if ($carouselArrowIndicators.length > 0) {
+            $carouselArrowIndicators.css("filter", "invert(1)");
+        }
 
         // Page 2: Destinations
         if (theme === "dark") {
@@ -260,42 +262,54 @@ $(function () {
             }
         });
 
-        // Send form.
         $('#contact-form').on('submit', function (e) {
             e.preventDefault();
 
-            let form = this;
+            // Fields
+            const $nameInput = $("#name");
+            const $emailInput = $("#email");
+            const $phoneInput = $("#phone");
+            const $messageInput = $("#message");
+            const form = this;
 
+            $nameInput.val(sanitizeInput($nameInput.val()));
+            $emailInput.val(sanitizeInput($emailInput.val()));
+            $phoneInput.val(sanitizeInput($phoneInput.val()));
+            $messageInput.val(sanitizeInput($messageInput.val()));
+
+            // Validación HTML5
             if (!form.checkValidity()) {
                 $(form).addClass('was-validated');
                 return;
             }
 
-            // Show spinner.
+            // Mostrar spinner
             $('#contact-loading').removeClass('d-none');
 
-            // Disable button.
+            // Deshabilitar botón
             $('#contact-form button').prop('disabled', true).text('Enviando...');
 
-            // Fake sent.
+            // Simular envío
             setTimeout(function () {
-                // Hide spinner.
+
+                // Ocultar spinner
                 $('#contact-loading').addClass('d-none');
 
-                // Show modal.
-                let modal = new bootstrap.Modal(document.getElementById('contactModal'));
+                // Mostrar modal
+                const modal = new bootstrap.Modal(document.getElementById('contactModal'));
                 modal.show();
 
-                // Reset form fields.
+                // Resetear formulario
                 form.reset();
-                $('.is-valid').removeClass('is-valid');
                 $(form).removeClass('was-validated');
+                $('.is-valid').removeClass('is-valid');
 
-                // Restore button.
-                $('#contact-form button').prop('disabled', false).text('Enviar');
+                // Restaurar botón
+                $('#contact-form button')
+                    .prop('disabled', false)
+                    .html(`Enviar mensaje <i class="bi bi-send-fill ms-2"></i>`);
 
-            }, 2000);
-            console.log("Formulario válido. Listo para enviar.");
+            }, 1500);
         });
     }
 
@@ -368,7 +382,7 @@ $(function () {
         });
     }
 
-    /* Animations */
+    // Animations.
     function initArticleReveal() {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -382,4 +396,46 @@ $(function () {
             .querySelectorAll(".article-reveal")
             .forEach(el => observer.observe(el));
     }
+
+    // Sanitize Input.
+    function sanitizeInput(str) {
+        return str
+            .replace(/<[^>]*>?/gm, "")   // Delete HTML tags.
+            .replace(/&/g, "&amp;")      // Escape &.
+            .replace(/</g, "&lt;")       // Escape <.
+            .replace(/>/g, "&gt;")       // Escape >.
+            .trim();                     // Delete extra whitespace.
+    }
+
+    // Validations.
+    // Newsletter (Footer).
+    $("#newsletter-email").on("input", function () {
+        const email = sanitizeInput($(this).val());
+        const regex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+
+        $(this).toggleClass("is-valid", regex.test(email));
+        $(this).toggleClass("is-invalid", !regex.test(email));
+    });
+
+    $("#newsletter-form").on("submit", function (e) {
+        e.preventDefault();
+
+        const $input = $("#newsletter-email");
+        const email = sanitizeInput($input.val());
+        const regex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+
+        // Si no es válido → marcar y salir
+        if (!regex.test(email)) {
+            $input.addClass("is-invalid");
+            return;
+        }
+
+        // Mostrar modal
+        const modal = new bootstrap.Modal(document.getElementById("newsletterModal"));
+        modal.show();
+
+        // Reset visual + campos
+        this.reset();
+        $input.removeClass("is-valid is-invalid");
+    });
 });
