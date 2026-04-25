@@ -317,16 +317,37 @@
     <div class="container">
         <div class="row g-4 align-items-start justify-content-center text-start">
             <div class="col-md-6 col-lg-4 d-flex flex-column">
-                <form action="#" method="post">
+                <form action="#" method="post" id="newsletter-form" novalidate>
                     <h5 class="fw-bold mb-3">Newsletter</h5>
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-journal-text"></i></span>
-                        <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                        <input type="email"
+                               class="form-control"
+                               id="newsletter-email"
+                               placeholder="Tu correo electrónico"
+                               required>
                         <button class="btn btn-primary" type="submit">
                             Enviar <i class="bi bi-send-fill ms-2"></i>
                         </button>
                     </div>
                 </form>
+                <div class="modal fade" id="newsletterModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-body-tertiary text-body-emphasis">
+                                <h5 class="modal-title">¡Suscripción exitosa!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                Gracias por suscribirte a nuestro newsletter.
+                                Pronto recibirás novedades y promociones exclusivas.
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <hr class="text-body-tertiary">
                 <section>
                     <h3 class="fw-bold text-body-emphasis mb-3">Módulo Educativo: Phishing</h3>
