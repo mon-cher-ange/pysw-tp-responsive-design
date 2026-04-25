@@ -1,0 +1,322 @@
+/* TODO: Implement custom colors. */
+/*:root {*/
+/*    --bs-body-bg: #FDFCF8;          !* Color de fondo principal del documento. *!*/
+/*    --bs-body-color: #141414;       !* Color de texto principal. *!*/
+
+/*    --bs-secondary-bg: #F2F0E9;     !* Color de fondo secundario. *!*/
+/*    --bs-secondary-color: #666666;  !* Color de texto secundario. *!*/
+
+/*    --bs-tertiary-bg: #F8F4EC;      !* Color de fondo terciario. *!*/
+/*    --bs-tertiary-color: #8A8A8A;   !* Color de texto terciario. *!*/
+
+/*    --bs-primary: #C5A021;*/
+/*    --custom-primary-hover: #9B7D1A;*/
+
+/*}*/
+
+/*html[data-bs-theme="dark"] {*/
+/*    --bs-body-bg: #121212;*/
+/*    --bs-body-color: #F5F5F5;*/
+
+/*    --bs-secondary-bg: #1E1E1E;*/
+/*    --bs-secondary-color: #B0B0B0;*/
+
+/*    --bs-tertiary-bg: #1A1A1A;*/
+/*    --bs-tertiary-color: #999999;*/
+
+/*    --bs-primary: #D4AF37;*/
+/*    --custom-primary-hover: #B8962F;*/
+/*}*/
+
+/* Page 1: Home */
+.card-rotate {
+    transform: rotate(-5deg);
+    transition: transform .3s ease;
+}
+
+.nav-underline > .underline {
+    height: 2px;
+    width: 0;
+    background-color: currentColor;
+    transition: width .3s ease;
+}
+
+.nav-underline:hover > .underline {
+    width: 100%;
+}
+
+/* Page 2: Destinations */
+.filter-tilt {
+    transform: rotate(5deg);
+    transition: transform .25s ease;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card img.card-img {
+    transition: transform 0.25s ease;
+}
+
+.card:hover img.card-img {
+    transform: scale(1.05);
+}
+
+.card .card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+
+    background-color: rgba(var(--bs-body-bg-rgb), 0.35); /* capa translúcida */
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+
+    color: var(--bs-body-color);
+
+    transform: translateY(100%);
+    transition:
+            transform .5s cubic-bezier(0.4, 0, 0.2, 1),
+            background-color .3s ease,
+            backdrop-filter .3s ease;
+}
+
+.card:hover .card-img-overlay {
+    transform: translateY(0);
+
+    background-color: rgba(var(--bs-body-bg-rgb), 0.55);
+    backdrop-filter: blur(14px) saturate(180%);
+}
+
+@media (max-width: 576px) {
+    table thead {
+        display: none;
+    }
+
+    table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--bs-border-color);
+        border-radius: .5rem;
+        padding: .75rem;
+        background-color: var(--bs-body-bg);
+    }
+
+    table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 0;
+        border: none;
+        border-bottom: 1px solid var(--bs-border-color);
+    }
+
+    table tbody td:last-child {
+        border-bottom: none;
+    }
+
+    table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--bs-body-color);
+    }
+}
+
+/* Page 3: Agencies */
+.card-scale {
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.flip-lower {
+    min-height: 300px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.flip-face {
+    backface-visibility: hidden;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-front {
+    transform: rotateY(0deg);
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
+.flip-lower.flipped .flip-front {
+    transform: rotateY(-180deg);
+}
+
+.flip-lower.flipped .flip-back {
+    transform: rotateY(0deg);
+}
+
+.flip-indicator {
+    cursor: pointer;
+}
+
+.flip-indicator__icon {
+    transition: transform .4s cubic-bezier(0.4, 0, 0.2, 1), color .3s ease;
+}
+
+.flip-indicator__icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* Rating */
+.star {
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.2s;
+}
+
+.star.active, .star:hover {
+    color: #ffc107;
+}
+/* Page 4: Contact Form */
+.modal.fade .modal-dialog {
+    transform: translateY(-20px);
+    transition: transform .3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+}
+
+.invalid-feedback {
+    animation: fadeIn .3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Page 5: Pricing */
+.tooltip-trigger {
+    transition: color .2s ease, transform .2s ease;
+}
+
+.tooltip-trigger:hover,
+.tooltip-trigger:focus,
+.tooltip-trigger:active {
+    color: var(--bs-primary);
+    transform: scale(1.15);
+}
+
+/* Page 6: Travel Blog */
+.article-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.25, .1, .25, 1);
+}
+
+.article-reveal.show-article {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.comment-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.25, .1, .25, 1);
+}
+
+.comment-reveal.show-comment {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sprites */
+.social-media-sprite {
+    --sprite-size: 36px;
+    background-image: url("../assets/img/social_media_sprite.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: var(--sprite-size);
+    height: var(--sprite-size);
+    opacity: 0.8;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.social-media-sprite:hover {
+    transform: scale(1.25);
+    opacity: 1;
+}
+
+.social-media-sprite__facebook {
+    background-position: 0 0;
+}
+
+.social-media-sprite__instagram {
+    background-position: -36px 0;
+}
+
+.social-media-sprite__twitter-x {
+    background-position: -72px 0;
+}
+
+.social-media-sprite__youtube {
+    background-position: -108px 0;
+}
+
+.important-sprite {
+    --size: 26px;
+    --frame: 3;
+    width: var(--size);
+    height: var(--size);
+    background-image: url("../assets/img/important_button_sprite.png");
+    background-repeat: no-repeat;
+    animation: play 1s steps(var(--frame)) infinite;
+}
+
+.common-sprite {
+    --size: 36px;
+    --frame: 3;
+    width: var(--size);
+    height: var(--size);
+    background-image: url("../assets/img/common_button_sprite.png");
+    background-repeat: no-repeat;
+    animation: play 1s steps(var(--frame)) infinite;
+    transition: transform .4s ease;
+}
+
+.common-button:hover .common-sprite {
+    transform: rotate(-180deg);
+}
+
+@keyframes play {
+    from { background-position: 0 0; }
+    to { background-position: calc(var(--frame) * var(--size) * -1) 0; }
+}
+
+.comment-face-sprite {
+    background-image: url("../assets/img/comment_face_sprite.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 38px;
+    height: 31px;
+    /*opacity: 0.8;*/
+    /*transition: transform .3s ease, opacity .3s ease;*/
+}
+
+.comment-face-sprite__01 {
+    background-position: 0 0;
+}
+
+.comment-face-sprite__02 {
+    background-position: -38px 0;
+}
+
+.comment-face-sprite__03 {
+    background-position: -76px 0;
+}

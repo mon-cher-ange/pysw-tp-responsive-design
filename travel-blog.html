@@ -1,276 +1,377 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Spectral:wght@400;500;600&family=Tenor+Sans&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/global.css">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Turismo del Norte - Blog</title>
+    <link href="css/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
-
-<body>
-    <header class="header">
-        <div class="header__container">
-            <a class="header__logo" href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-balloon-heart"
-                    viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063q.068.062.132.129.065-.067.132-.129c3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3 3 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398" />
-                </svg>
-            </a>
-            <nav class="nav" aria-label="Navegación principal">
-                <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link nav__link--active" href="index.html"
-                            aria-current="page">Inicio</a></li>
-                    <li class="nav__item nav__item--dropdown">
-                        <a class="nav__link" href="#" aria-haspopup="true" aria-expanded="false">Explorar</a>
-                        <div class="nav__menu" role="menu">
-                            <ul class="nav__sublist">
-                                <li class="nav__sublist__item"><a class="nav__sublist__link"
-                                        href="destinations.html">Destinos</a></li>
-                                <li class="nav__sublist__item"><a class="nav__sublist__link"
-                                        href="agencies.html">Agencias</a></li>
-                                <li class="nav__sublist__item"><a class="nav__sublist__link"
-                                        href="pricing.html">Precios</a></li>
-                                <li class="nav__sublist__item"><a class="nav__sublist__link"
-                                        href="travel-blog.html">Blog</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav__item"><a class="nav__link" href="contact-form.html">Contacto</a></li>
-
-                    <li class="nav__item">
-                        <a class="nav__link">
-                            <button id="theme-toggle" class="theme-toggle">🌙</button>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+<body id="page-travel-blog">
+<nav class="navbar navbar-expand-lg bg-body text-body shadow-sm py-3 sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+            <i class="bi bi-balloon-heart-fill fs-3"></i>
+            Turismo del Norte
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <i class="bi bi-list fs-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-3">
+                <li class="nav-item">
+                    <a class="nav-link position-relative nav-underline" href="index.html">
+                        <i class="bi bi-house-door"></i> Inicio
+                        <span class="underline position-absolute start-0 bottom-0"></span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link position-relative nav-underline" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-compass"></i> Explorar
+                        <span class="underline position-absolute start-0 bottom-0"></span>
+                    </a>
+                    <ul class="dropdown-menu shadow-sm">
+                        <li><a class="dropdown-item position-relative nav-underline" href="destinations.html"><i class="bi bi-geo-alt"></i> Destinos<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="agencies.html"><i class="bi bi-building"></i> Agencias<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="pricing.html"><i class="bi bi-cash-stack"></i> Precios<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                        <li><a class="dropdown-item position-relative nav-underline" href="travel-blog.html"><i class="bi bi-journal-text"></i> Blog<span class="underline position-absolute start-0 bottom-0"></span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative nav-underline" href="contact-form.html">
+                        <i class="bi bi-envelope"></i> Contacto
+                        <span class="underline position-absolute start-0 bottom-0"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="btn btn-outline-secondary ms-lg-3">
+                        <i class="bi bi-moon-fill" style="color: #ffc107"></i>
+                    </button>
+                </li>
+            </ul>
         </div>
-    </header>
-    <main class="blog-main">
-        <section class="blog-header">
-            <h1 class="blog-header__title">Blog de Destinos</h1>
-            <p class="blog-header__subtitle">Descubre historias e inspiración de viajeros</p>
-        </section>
-
-        <!-- Inputs ocultos para filtrado (fuera del contenedor) -->
-        <input type="radio" name="category" id="all" checked aria-label="Mostrar todos los artículos">
-        <input type="radio" name="category" id="cultural" aria-label="Filtrar por cultura">
-        <input type="radio" name="category" id="natural" aria-label="Filtrar por naturaleza">
-        <input type="radio" name="category" id="playa" aria-label="Filtrar por playa">
-
-        <div class="blog-container">
-            <!-- Filtro por categorías -->
-            <aside class="blog-sidebar" aria-label="Filtros del blog">
-                <div class="filter-section">
-                    <h3 class="filter-section__title">Categorías</h3>
-                    <div class="filter-tags" role="radiogroup" aria-label="Filtrar por categoría">
-                        <label for="all" class="filter-tag filter-tag--active" role="radio">Todos</label>
-                        <label for="cultural" class="filter-tag" role="radio">Cultural</label>
-                        <label for="natural" class="filter-tag" role="radio">Naturaleza</label>
-                        <label for="playa" class="filter-tag" role="radio">Playa</label>
-                    </div>
+    </div>
+</nav>
+<main class="container py-5">
+    <section class="text-center mb-5">
+        <h1 class="text-center mb-4 fw-bold">Blog de Destinos</h1>
+        <p class="text-body-secondary fs-5">Descubre historias e inspiración de viajeros</p>
+    </section>
+    <div class="row g-4">
+        <aside class="col-12 col-md-3">
+            <div class="p-3 border rounded-3 bg-body shadow-sm">
+                <h3 class="h6 text-uppercase fw-bold text-secondary mb-3">Categorías</h3>
+                <div class="nav flex-column nav-pills" id="blog-filters">
+                    <button class="nav-link active" data-filter="all"><i class="bi bi-grid-fill me-2"></i> Todos</button>
+                    <button class="nav-link" data-filter="cultural"><i class="bi bi-grid-fill me-2"></i> Cultural</button>
+                    <button class="nav-link" data-filter="natural"><i class="bi bi-grid-fill me-2"></i> Naturaleza</button>
+                    <button class="nav-link" data-filter="playa"><i class="bi bi-grid-fill me-2"></i> Playa</button>
                 </div>
-            </aside>
-
-            <!-- Grid de artículos (estilo newspaper) -->
-            <section class="blog-grid" aria-label="Lista de artículos">
-                <!-- Artículo destacado (principal) -->
-                <article class="article article--featured article--reveal" data-category="natural">
-                    <div class="article__image-container">
-                        <img class="article__image"
-                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/40/db/the-great-salinas-grandes.jpg?w=800&h=400&s=1"
-                            alt="Salinas Grandes">
-                    </div>
-                    <div class="article__content">
-                        <span class="article__category">Naturaleza</span>
-                        <h2 class="article__title">Salinas Grandes: El Desierto de Sal más Puro</h2>
-                        <p class="article__excerpt">A 3.450 metros de altura, un desierto blanco infinito que se refleja
-                            en piletones de agua cristalina. Una experiencia visual única en Argentina.</p>
-                        <div class="article__meta">
-                            <span class="article__author">Por María González</span>
-                            <span class="article__date">15 de Abril, 2026</span>
+            </div>
+        </aside>
+        <section aria-label="Lista de artículos" class="col-12 col-md-9">
+            <div class="row g-4">
+                <article class="col-12 article-item" data-category="natural" tabindex="0">
+                    <div class="card shadow-sm border rounded-4 overflow-hidden article-reveal bg-body">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/14/40/db/the-great-salinas-grandes.jpg?w=800&h=400&s=1"
+                             class="card-img-top" alt="Salinas Grandes">
+                        <div class="card-body">
+                            <span class="btext-bg-success mb-2">Naturaleza</span>
+                            <h2 class="h4 fw-bold text-body-emphasis">Salinas Grandes: El Desierto de Sal más Puro</h2>
+                            <p class="text-body">A 3.450 metros de altura, un desierto blanco infinito que se refleja en
+                                piletones de agua cristalina.</p>
+                            <small class="text-body-secondary">Por María González — 15 de Abril, 2026</small>
                         </div>
                     </div>
                 </article>
-
-                <!-- Artículos secundarios -->
-                <article class="article article--reveal" data-category="cultural">
-                    <div class="article__image-container">
-                        <img class="article__image"
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbR4bLhL-DmQvMR1iGEmDx268NBcmk4GDBw&s"
-                            alt="Purmamarca">
-                    </div>
-                    <div class="article__content">
-                        <span class="article__category">Cultural</span>
-                        <h3 class="article__title">Purmamarca y sus Siete Colores</h3>
-                        <p class="article__excerpt">El icónico Cerro de los Siete Colores domina este pintoresco pueblo
-                            con su feria artesanal.</p>
-                        <div class="article__meta">
-                            <span class="article__author">Por Carlos Ruiz</span>
+                <article class="col-12 col-md-6 article-item" data-category="cultural" tabindex="1">
+                    <div class="card shadow-sm border rounded-4 overflow-hidden article-reveal bg-body">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgbR4bLhL-DmQvMR1iGEmDx268NBcmk4GDBw&s"
+                             class="card-img-top" alt="Purmamarca">
+                        <div class="card-body">
+                            <span class="badge text-bg-primary mb-2">Cultural</span>
+                            <h3 class="h5 fw-bold text-body-emphasis">Purmamarca y sus Siete Colores</h3>
+                            <p class="text-body">El icónico Cerro de los Siete Colores domina este pintoresco pueblo con
+                                su feria artesanal.</p>
+                            <small class="text-body-secondary">Por Carlos Ruiz</small>
                         </div>
                     </div>
                 </article>
-
-                <article class="article article--reveal" data-category="cultural">
-                    <div class="article__image-container">
-                        <img class="article__image"
-                            src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlkfEJE2Q2Wdf3rAbFFDeld36qksqAtKH4g_7ycc4e7mah_C2uXV80MFrc8s_MqQj4csDhN9Y8L6ppJSF666TMuGTEFL0c-CVBs5lhwMzhV3uQXYct_NBGCc6Zt11K7uvJf8g=s680-w680-h510-rw"
-                            alt="Machu Picchu">
-                    </div>
-                    <div class="article__content">
-                        <span class="article__category">Cultural</span>
-                        <h3 class="article__title">Machu Picchu: La Ciudad Perdida de los Incas</h3>
-                        <p class="article__excerpt">Descubre el tesoro arqueológico que revela los secretos de una
-                            civilización milenaria.</p>
-                        <div class="article__meta">
-                            <span class="article__author">Por Ana López</span>
+                <article class="col-12 col-md-6 article-item" data-category="cultural" tabindex="2">
+                    <div class="card shadow-sm border rounded-4 overflow-hidden article-reveal bg-body">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlkfEJE2Q2Wdf3rAbFFDeld36qksqAtKH4g_7ycc4e7mah_C2uXV80MFrc8s_MqQj4csDhN9Y8L6ppJSF666TMuGTEFL0c-CVBs5lhwMzhV3uQXYct_NBGCc6Zt11K7uvJf8g=s680-w680-h510-rw"
+                             class="card-img-top" alt="Machu Picchu">
+                        <div class="card-body">
+                            <span class="badge text-bg-primary mb-2">Cultural</span>
+                            <h3 class="h5 fw-bold text-body-emphasis">Machu Picchu: La Ciudad Perdida de los Incas</h3>
+                            <p class="text-body">Descubre el tesoro arqueológico que revela los secretos de una
+                                civilización milenaria.</p>
+                            <small class="text-body-secondary">Por Ana López</small>
                         </div>
                     </div>
                 </article>
-
-                <article class="article article--reveal" data-category="natural">
-                    <div class="article__image-container">
-                        <img class="article__image"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Iguazu_Cataratas2.jpg/330px-Iguazu_Cataratas2.jpg"
-                            alt="Cataratas del Iguazú">
-                    </div>
-                    <div class="article__content">
-                        <span class="article__category">Naturaleza</span>
-                        <h3 class="article__title">Cataratas del Iguazú: Maravilla Natural</h3>
-                        <p class="article__excerpt">Siente la fuerza de una de las siete maravillas naturales del mundo
-                            rodeadas de selva subtropical.</p>
-                        <div class="article__meta">
-                            <span class="article__author">Por Pedro Martín</span>
+                <article class="col-12 col-md-6 article-item" data-category="natural" tabindex="3">
+                    <div class="card shadow-sm border rounded-4 overflow-hidden article-reveal bg-body">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Iguazu_Cataratas2.jpg/330px-Iguazu_Cataratas2.jpg"
+                             class="card-img-top" alt="Cataratas del Iguazú">
+                        <div class="card-body">
+                            <span class="badge text-bg-success mb-2">Naturaleza</span>
+                            <h3 class="h5 fw-bold text-body-emphasis">Cataratas del Iguazú: Maravilla Natural</h3>
+                            <p class="text-body">Siente la fuerza de una de las siete maravillas naturales del mundo
+                                rodeadas de selva subtropical.</p>
+                            <small class="text-body-secondary">Por Pedro Martín</small>
                         </div>
                     </div>
                 </article>
-
-                <article class="article article--reveal" data-category="cultural">
-                    <div class="article__image-container">
-                        <img class="article__image"
-                            src="https://cdn-imgix.headout.com/mircobrands-content/image/3c771d9025aca83d1cc863b347394baa-AdobeStock_301097919.jpeg?auto=compress%2Cformat&q=90&crop=faces&fit=crop"
-                            alt="Acrópolis de Atenas">
-                    </div>
-                    <div class="article__content">
-                        <span class="article__category">Cultural</span>
-                        <h3 class="article__title">Atenas: Cuna de la Democracia</h3>
-                        <p class="article__excerpt">Camina por la Acrópolis y descubre los templos que definieron la
-                            arquitectura occidental.</p>
-                        <div class="article__meta">
-                            <span class="article__author">Por Diego Sánchez</span>
+                <article class="col-12 col-md-6 article-item" data-category="cultural" tabindex="4">
+                    <div class="card shadow-sm border rounded-4 overflow-hidden article-reveal bg-body">
+                        <img src="https://cdn-imgix.headout.com/mircobrands-content/image/3c771d9025aca83d1cc863b347394baa-AdobeStock_301097919.jpeg?auto=compress%2Cformat&q=90&crop=faces&fit=crop"
+                             class="card-img-top" alt="Acrópolis de Atenas">
+                        <div class="card-body">
+                            <span class="badge text-bg-primary mb-2">Cultural</span>
+                            <h3 class="h5 fw-bold text-body-emphasis">Atenas: Cuna de la Democracia</h3>
+                            <p class="text-body">Camina por la Acrópolis y descubre los templos que definieron la
+                                arquitectura occidental.</p>
+                            <small class="text-body-secondary">Por Diego Sánchez</small>
                         </div>
                     </div>
                 </article>
-
-                <article class="article article--reveal" data-category="natural">
-                    <div class="article__image-container">
-                        <img class="article__image"
-                            src="https://wp-content.miviaje.com/2017/11/auroras-boreales-768x508.jpg?auto=format%2Ccompress&quality=75&width=640&height=360&fit=cover&gravity=center&sharp=true&progressive=true"
-                            alt="Auroras boreales en Islandia">
-                    </div>
-                    <div class="article__content">
-                        <span class="article__category">Naturaleza</span>
-                        <h3 class="article__title">Islandia: Tierra de Fuego y Hielo</h3>
-                        <p class="article__excerpt">Volcanes, géiseres activos y cascadas gigantescas bajo la luz mágica
-                            de la aurora boreal.</p>
-                        <div class="article__meta">
-                            <span class="article__author">Por Sofia Torres</span>
+                <article class="col-12 col-md-6 article-item" data-category="natural" tabindex="5">
+                    <div class="card shadow-sm border rounded-4 overflow-hidden article-reveal bg-body">
+                        <img src="https://wp-content.miviaje.com/2017/11/auroras-boreales-768x508.jpg?auto=format%2Ccompress&quality=75&width=640&height=360&fit=cover&gravity=center&sharp=true&progressive=true"
+                             class="card-img-top" alt="Auroras boreales en Islandia">
+                        <div class="card-body">
+                            <span class="badge text-bg-success mb-2">Naturaleza</span>
+                            <h3 class="h5 fw-bold text-body-emphasis">Islandia: Tierra de Fuego y Hielo</h3>
+                            <p class="text-body">Volcanes, géiseres activos y cascadas gigantescas bajo la luz mágica de
+                                la aurora boreal.</p>
+                            <small class="text-body-secondary">Por Sofia Torres</small>
                         </div>
                     </div>
                 </article>
-
-                <article class="article article--reveal" data-category="playa">
-                    <div class="article__image-container">
-                        <img class="article__image"
-                            src="https://scubafinders.com/blog/wp-content/uploads/2025/04/maldivas-turismo.webp"
-                            alt="Islas Maldivas">
-                    </div>
-                    <div class="article__content">
-                        <span class="article__category">Playa</span>
-                        <h3 class="article__title">Islas Maldivas: Paraíso Tropical</h3>
-                        <p class="article__excerpt">El paraíso definitivo con arenas blancas, aguas cristalinas y
-                            resorts de lujo sobre el agua.</p>
-                        <div class="article__meta">
-                            <span class="article__author">Por Laura Martínez</span>
+                <article class="col-12 col-md-6 article-item" data-category="playa" tabindex="6">
+                    <div class="card shadow-sm border rounded-4 overflow-hidden article-reveal bg-body">
+                        <img src="https://scubafinders.com/blog/wp-content/uploads/2025/04/maldivas-turismo.webp"
+                             class="card-img-top" alt="Islas Maldivas">
+                        <div class="card-body">
+                            <span class="badge text-bg-info mb-2">Playa</span>
+                            <h3 class="h5 fw-bold text-body-emphasis">Islas Maldivas: Paraíso Tropical</h3>
+                            <p class="text-body">El paraíso definitivo con arenas blancas, aguas cristalinas y resorts
+                                de lujo sobre el agua.</p>
+                            <small class="text-body-secondary">Por Laura Martínez</small>
                         </div>
-                    </div>
-                </article>
-            </section>
-        </div>
-
-        <!-- Sección de comentarios -->
-        <section class="comments-section">
-            <h2 class="comments-section__title">Comentarios de Lectores</h2>
-            <div class="comments-list">
-                <article class="comment comment--reveal">
-                    <div class="comment__avatar">M</div>
-                    <div class="comment__content">
-                        <h4 class="comment__author">María García</h4>
-                        <p class="comment__text">¡Excelente artículo! Me inspiró a planificar mi próximo viaje a los
-                            Andes.</p>
-                        <span class="comment__date">Hace 2 días</span>
-                    </div>
-                </article>
-
-                <article class="comment comment--reveal">
-                    <div class="comment__avatar">J</div>
-                    <div class="comment__content">
-                        <h4 class="comment__author">Juan Pérez</h4>
-                        <p class="comment__text">Las fotos son increíbles. ¿Dónde puedo encontrar más información sobre
-                            las agencias locales?</p>
-                        <span class="comment__date">Hace 1 día</span>
-                    </div>
-                </article>
-
-                <article class="comment comment--reveal">
-                    <div class="comment__avatar">C</div>
-                    <div class="comment__content">
-                        <h4 class="comment__author">Carlos López</h4>
-                        <p class="comment__text">Visited this place last year. Definitely worth every penny!</p>
-                        <span class="comment__date">Hace 5 horas</span>
                     </div>
                 </article>
             </div>
         </section>
-    </main>
-    <footer class="footer">
-        <div class="footer__container">
-            <section class="footer__section footer__section--newsletter">
-                <h4 class="footer__title">Newsletter</h4>
-                <form class="newsletter-form" action="#">
-                    <input class="newsletter-form__input" type="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="newsletter-form__button">Suscribirse</button>
+    </div>
+    <section class="mt-5">
+        <h2 class="fw-bold mb-4">Comentarios de Lectores</h2>
+        <div id="comments-list" class="vstack gap-4">
+            <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__01"></span>
+                    <strong>María García</strong>
+                </div>
+                <p class="mb-1">¡Excelente artículo! Me inspiró a planificar mi próximo viaje a los Andes.</p>
+                <small class="text-muted">Hace 2 días</small>
+            </div>
+            <div class="position-relative p-3 border rounded-3 shadow-sm bg-body comment-reveal">
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__02"></span>
+                    <strong>Juan Pérez</strong>
+                </div>
+                <p class="mb-1">Las fotos son increíbles. ¿Dónde puedo encontrar más información sobre agencias locales?</p>
+                <small class="text-muted">Hace 1 día</small>
+            </div>
+            <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__03"></span>
+                    <strong>Valeria Núñez</strong>
+                </div>
+                <p class="mb-1">Leí el artículo sobre Machu Picchu y me encantó cómo explicaron la historia. Me dieron más ganas de visitar sitios culturales.</p>
+                <small class="text-muted">Hace 6 horas</small>
+            </div>
+            <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__01"></span>
+                    <strong>Esteban Ríos</strong>
+                </div>
+                <p class="mb-1">Las fotos de Islandia son impresionantes. La sección de naturaleza siempre me deja con ganas de explorar más.</p>
+                <small class="text-muted">Hace 12 horas</small>
+            </div>
+            <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__02"></span>
+                    <strong>Camila Duarte</strong>
+                </div>
+                <p class="mb-1">El artículo sobre las Maldivas fue espectacular. Me encantó la descripción de las playas, ¡parece un sueño!</p>
+                <small class="text-muted">Hace 1 día</small>
+            </div>
+            <div class="p-3 border rounded-3 shadow-sm bg-body comment-reveal">
+                <div class="d-flex align-items-center gap-3 pb-2">
+                    <span class="comment-face-sprite comment-face-sprite__03"></span>
+                    <strong>Gonzalo Herrera</strong>
+                </div>
+                <p class="mb-1">Muy buena nota sobre Purmamarca. La parte cultural del blog es mi favorita, siempre descubro algo nuevo.</p>
+                <small class="text-muted">Hace 3 días</small>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="container-fluid text-body bg-body-tertiary pt-5 border-top">
+    <div class="container">
+        <div class="row g-4 align-items-start justify-content-center text-start">
+            <div class="col-md-6 col-lg-4 d-flex flex-column">
+                <form action="#" method="post" id="newsletter-form" novalidate>
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-journal-text"></i></span>
+                        <input type="email"
+                               class="form-control"
+                               id="newsletter-email"
+                               placeholder="Tu correo electrónico"
+                               required>
+                        <button class="btn btn-primary" type="submit">
+                            Enviar <i class="bi bi-send-fill ms-2"></i>
+                        </button>
+                    </div>
                 </form>
-            </section>
-            <section class="footer__section footer__section--social">
-                <h4 class="footer__title">Síguenos</h4>
-                <div class="social-links">
-                    <a class="social-links__link" href="#" aria-label="Ir a Facebook">Facebook</a>
-                    <a class="social-links__link" href="#" aria-label="Ir a Instagram">Instagram</a>
-                    <a class="social-links__link" href="#" aria-label="Ir a Twitter">Twitter</a>
+                <div class="modal fade" id="newsletterModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-body-tertiary text-body-emphasis">
+                                <h5 class="modal-title">¡Suscripción exitosa!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                Gracias por suscribirte a nuestro newsletter.
+                                Pronto recibirás novedades y promociones exclusivas.
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-            <section class="footer__section footer__section--map">
-                <h4 class="footer__title">Nuestra Ubicación</h4>
-                <div class="map-container">
-                    <iframe class="map-container__iframe"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.999999999!2d-58.381559!3d-34.603684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac7ff000001%3A0x123456789abcdef!2sObelisco!5e0!3m2!1ses-419!2sar!4v1700000000000"
-                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <hr class="text-body-tertiary">
+                <section>
+                    <h3 class="fw-bold text-body-emphasis mb-3">Módulo Educativo: Phishing</h3>
+                    <p class="text-body-secondary mb-4">
+                        Aprende a identificar correos fraudulentos antes de caer en una estafa.
+                    </p>
+                    <button type="button"
+                            class="btn btn-warning d-flex align-items-center gap-2 common-button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#phishingModal">
+                        Simulación de phishing
+                        <span class="common-sprite d-inline-block"></span>
+                    </button>
+                </section>
+                <div class="modal fade" id="phishingModal" tabindex="-1" aria-labelledby="phishingModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="phishingModalLabel">Simulación de phishing</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="alert alert-danger mb-3">
+                                    <i class="bi bi-exclamation-triangle-fill fs-4"></i>
+                                    <div>
+                                        <strong class="text-uppercase">Advertencia:</strong> Esta es una simulación educativa. No hagas clic en enlaces sospechosos ni compartas información personal en correos como este.
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <h6 class="fw-bold">Ejemplo de correo sospechoso</h6>
+                                    <div class="border rounded p-3 bg-body-secondary small">
+                                        <p><strong>De:</strong> soporte-banco@seguridad-bancaria.com</p>
+                                        <p><strong>Asunto:</strong> URGENTE: Verifica tu cuenta ahora</p>
+                                        <p>
+                                            Estimado usuario, hemos detectado actividad inusual en su cuenta.
+                                            Para evitar el bloqueo, haga clic en el siguiente enlace e ingrese sus datos:
+                                        </p>
+                                        <p>
+                                            <a href="#"
+                                               class="text-danger text-decoration-underline"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="top"
+                                               title="Dominio sospechoso: demasiado largo, incluye palabras engañosas y no coincide con el banco real.">
+                                                https://banco-seguro.com.verifica-tu-cuenta.com
+                                            </a>
+                                        </p>
+                                        <p>Si no lo hace en las próximas 2 horas, su cuenta será suspendida.</p>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <h6 class="fw-bold">¿Qué señales de fraude ves en este correo?</h6>
+                                    <p class="text-body-secondary small mb-2">
+                                        Marca todas las opciones que consideres sospechosas:
+                                    </p>
+                                    <form id="phishing-quiz">
+                                        <div class="form-check">
+                                            <input class="form-check-input phishing-option" type="checkbox" value="email" id="opt-email">
+                                            <label class="form-check-label" for="opt-email">
+                                                Dirección de correo extraña (soporte-banco@seguridad-bancaria.com)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input phishing-option" type="checkbox" value="link" id="opt-link">
+                                            <label class="form-check-label" for="opt-link">
+                                                Enlace sospechoso con dominio raro (banco-seguro.com.verifica-tu-cuenta.com)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input phishing-option" type="checkbox" value="urgencia" id="opt-urgencia">
+                                            <label class="form-check-label" for="opt-urgencia">
+                                                Mensaje con urgencia y amenaza de bloqueo
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input phishing-option" type="checkbox" value="ninguna" id="opt-ninguna">
+                                            <label class="form-check-label" for="opt-ninguna">
+                                                No veo nada raro, parece un correo legítimo
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="phishing-feedback" class="mt-3"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="phishing-check" class="btn btn-primary">
+                                    Comprobar respuestas
+                                </button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+            <div class="col-md-6 col-lg-4 text-md-center">
+                <h5 class="fw-bold mb-3">Redes</h5>
+                <div class="d-flex justify-content-md-center gap-3 fs-3">
+                    <a href="#" class="social-media-sprite social-media-sprite__facebook" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__instagram" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__twitter-x" aria-disabled="true"></a>
+                    <a href="#" class="social-media-sprite social-media-sprite__youtube" aria-disabled="true"></a>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <h5 class="fw-bold mb-3">Ubicación</h5>
+                <div class="ratio ratio-16x9 rounded-3 shadow-sm overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3639.5108038706435!2d-65.2929982!3d-24.1888835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5bca584281%3A0xb1d519d50cac526d!2sFaculty%20of%20Engineering%20National%20University%20Jujuy!5e0!3m2!1sen!2sar!4v1776990390729!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
-        <div class="footer__bottom">
-            <p class="footer__copyright">&copy; 2026</p>
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-2 text-center py-3 mt-4 border-top text-body-secondary">
+            <span class="small">&copy; 2026 Turismo del Norte - Comprometidos con un turismo seguro y responsable.</span>
+            <span class="d-inline-block important-sprite"></span>
         </div>
-    </footer>
-
-    <script src="./script.js"></script>
+    </div>
+</footer>
+<script src="js/jquery-4.0.0.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
-
 </html>
